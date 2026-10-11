@@ -1,0 +1,5648 @@
+{
+ "generated": "2026-10-11",
+ "data_period": "2023-2025",
+ "thresholds": {
+  "pH": {
+   "type": "range",
+   "min": 6.5,
+   "max": 8.5,
+   "unit": ""
+  },
+  "Dissolved oxygen": {
+   "type": "min",
+   "min": 5.0,
+   "unit": "mg/l"
+  },
+  "BOD": {
+   "type": "max",
+   "max": 3.0,
+   "unit": "mg/l"
+  }
+ },
+ "headline": {
+  "total_rows": 1524,
+  "Dissolved oxygen": {
+   "sampled": 116,
+   "breaches": 42,
+   "bdl": 0,
+   "missing": 4
+  },
+  "BOD": {
+   "sampled": 112,
+   "breaches": 100,
+   "bdl": 0,
+   "missing": 8
+  },
+  "pH": {
+   "sampled": 115,
+   "breaches": 6,
+   "bdl": 0,
+   "missing": 5
+  },
+  "readings_numeric": 1289,
+  "readings_bdl": 174,
+  "readings_missing": 61
+ },
+ "ghats": [
+  {
+   "site": "Bairagarh (Sant Hirdaram) kund",
+   "short_name": "Bairagarh",
+   "water_body": "Upper Lake",
+   "water_bodies": [
+    "Upper Lake"
+   ],
+   "site_ambiguous": false,
+   "site_match_confidence": "high",
+   "names_as_printed": [
+    "Sant Hirdaram Visarjankund, Bairagarh, Bhopal",
+    "Sant Hirdaram visarjan kund,Bairagarh(upper lake),Bhopal",
+    "Sant Hirdaram Visarjan Kund, Bairagarh (Upper Lake), Bhopal"
+   ],
+   "severity": 63.0,
+   "severity_components": {
+    "Dissolved oxygen": 0.895,
+    "BOD": 0.704,
+    "pH": 0.0,
+    "worst_value_penalty": 0.469
+   },
+   "tier": {
+    "key": "high",
+    "label_en": "High concern",
+    "label_hi": "उच्च चिंता",
+    "colour": "orange"
+   },
+   "evidence": {
+    "key": "strong",
+    "label_en": "Strong evidence",
+    "label_hi": "मज़बूत साक्ष्य",
+    "readings": 39,
+    "combos": 13,
+    "expected_combos": 18
+   },
+   "testing_priority": {
+    "score": 28.5,
+    "missing_combos": 5,
+    "missing_readings": 6,
+    "rank": 1
+   },
+   "year_trend": "stable",
+   "reason_en": "Bairagarh: DO below 5 mg/l in 11 of 13 readings (lowest 0); BOD above 3 mg/l in 13 of 13 (highest 14).",
+   "reason_hi": "Bairagarh: 13 में से 11 रीडिंग में DO 5 mg/l से कम (न्यूनतम 0); 13 में से 13 रीडिंग में BOD 3 mg/l से अधिक (अधिकतम 14)।",
+   "summary": {
+    "Dissolved oxygen": {
+     "sampled": 13,
+     "breaches": 11,
+     "breach_rate": 0.8461538461538461,
+     "worst_value": 0.0,
+     "bdl": 0,
+     "missing": 2,
+     "worst_reading": {
+      "year": 2023,
+      "festival": "Ganesh",
+      "phase": "after",
+      "value": 0.0,
+      "unit": "mg/l",
+      "source_page": 26
+     },
+     "by_festival": {
+      "Ganesh": {
+       "sampled": 7,
+       "breaches": 5,
+       "breach_rate": 0.7142857142857143
+      },
+      "Durga": {
+       "sampled": 6,
+       "breaches": 6,
+       "breach_rate": 1.0
+      }
+     },
+     "by_year": {
+      "2023": {
+       "sampled": 6,
+       "breaches": 5,
+       "breach_rate": 0.8333333333333334
+      },
+      "2024": {
+       "sampled": 6,
+       "breaches": 5,
+       "breach_rate": 0.8333333333333334
+      },
+      "2025": {
+       "sampled": 1,
+       "breaches": 1,
+       "breach_rate": 1.0
+      }
+     },
+     "by_phase": {
+      "pre": {
+       "sampled": 4,
+       "breaches": 2,
+       "breach_rate": 0.5
+      },
+      "during": {
+       "sampled": 5,
+       "breaches": 5,
+       "breach_rate": 1.0
+      },
+      "after": {
+       "sampled": 4,
+       "breaches": 4,
+       "breach_rate": 1.0
+      }
+     }
+    },
+    "BOD": {
+     "sampled": 13,
+     "breaches": 13,
+     "breach_rate": 1.0,
+     "worst_value": 14.0,
+     "bdl": 0,
+     "missing": 2,
+     "worst_reading": {
+      "year": 2024,
+      "festival": "Ganesh",
+      "phase": "after",
+      "value": 14.0,
+      "unit": "mg/l",
+      "source_page": 69
+     },
+     "by_festival": {
+      "Ganesh": {
+       "sampled": 7,
+       "breaches": 7,
+       "breach_rate": 1.0
+      },
+      "Durga": {
+       "sampled": 6,
+       "breaches": 6,
+       "breach_rate": 1.0
+      }
+     },
+     "by_year": {
+      "2023": {
+       "sampled": 6,
+       "breaches": 6,
+       "breach_rate": 1.0
+      },
+      "2024": {
+       "sampled": 6,
+       "breaches": 6,
+       "breach_rate": 1.0
+      },
+      "2025": {
+       "sampled": 1,
+       "breaches": 1,
+       "breach_rate": 1.0
+      }
+     },
+     "by_phase": {
+      "pre": {
+       "sampled": 4,
+       "breaches": 4,
+       "breach_rate": 1.0
+      },
+      "during": {
+       "sampled": 5,
+       "breaches": 5,
+       "breach_rate": 1.0
+      },
+      "after": {
+       "sampled": 4,
+       "breaches": 4,
+       "breach_rate": 1.0
+      }
+     }
+    },
+    "pH": {
+     "sampled": 13,
+     "breaches": 0,
+     "breach_rate": 0.0,
+     "worst_value": 6.87,
+     "bdl": 0,
+     "missing": 2,
+     "worst_reading": {
+      "year": 2024,
+      "festival": "Durga",
+      "phase": "during",
+      "value": 6.87,
+      "unit": "",
+      "source_page": 25
+     },
+     "by_festival": {
+      "Ganesh": {
+       "sampled": 7,
+       "breaches": 0,
+       "breach_rate": 0.0
+      },
+      "Durga": {
+       "sampled": 6,
+       "breaches": 0,
+       "breach_rate": 0.0
+      }
+     },
+     "by_year": {
+      "2023": {
+       "sampled": 6,
+       "breaches": 0,
+       "breach_rate": 0.0
+      },
+      "2024": {
+       "sampled": 6,
+       "breaches": 0,
+       "breach_rate": 0.0
+      },
+      "2025": {
+       "sampled": 1,
+       "breaches": 0,
+       "breach_rate": 0.0
+      }
+     },
+     "by_phase": {
+      "pre": {
+       "sampled": 4,
+       "breaches": 0,
+       "breach_rate": 0.0
+      },
+      "during": {
+       "sampled": 5,
+       "breaches": 0,
+       "breach_rate": 0.0
+      },
+      "after": {
+       "sampled": 4,
+       "breaches": 0,
+       "breach_rate": 0.0
+      }
+     }
+    }
+   },
+   "coverage": {
+    "covered": 13,
+    "expected": 18,
+    "gaps": [
+     {
+      "year": 2025,
+      "festival": "Ganesh",
+      "phase": "pre",
+      "assessed_readings": 0,
+      "status": "tabled_but_missing"
+     },
+     {
+      "year": 2025,
+      "festival": "Ganesh",
+      "phase": "after",
+      "assessed_readings": 0,
+      "status": "tabled_but_missing"
+     },
+     {
+      "year": 2025,
+      "festival": "Durga",
+      "phase": "pre",
+      "assessed_readings": 0,
+      "status": "no_table"
+     },
+     {
+      "year": 2025,
+      "festival": "Durga",
+      "phase": "during",
+      "assessed_readings": 0,
+      "status": "no_table"
+     },
+     {
+      "year": 2025,
+      "festival": "Durga",
+      "phase": "after",
+      "assessed_readings": 0,
+      "status": "no_table"
+     }
+    ],
+    "combos": [
+     {
+      "year": 2023,
+      "festival": "Ganesh",
+      "phase": "pre",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2023,
+      "festival": "Ganesh",
+      "phase": "during",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2023,
+      "festival": "Ganesh",
+      "phase": "after",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2023,
+      "festival": "Durga",
+      "phase": "pre",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2023,
+      "festival": "Durga",
+      "phase": "during",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2023,
+      "festival": "Durga",
+      "phase": "after",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2024,
+      "festival": "Ganesh",
+      "phase": "pre",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2024,
+      "festival": "Ganesh",
+      "phase": "during",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2024,
+      "festival": "Ganesh",
+      "phase": "after",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2024,
+      "festival": "Durga",
+      "phase": "pre",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2024,
+      "festival": "Durga",
+      "phase": "during",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2024,
+      "festival": "Durga",
+      "phase": "after",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2025,
+      "festival": "Ganesh",
+      "phase": "pre",
+      "assessed_readings": 0,
+      "status": "tabled_but_missing"
+     },
+     {
+      "year": 2025,
+      "festival": "Ganesh",
+      "phase": "during",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2025,
+      "festival": "Ganesh",
+      "phase": "after",
+      "assessed_readings": 0,
+      "status": "tabled_but_missing"
+     },
+     {
+      "year": 2025,
+      "festival": "Durga",
+      "phase": "pre",
+      "assessed_readings": 0,
+      "status": "no_table"
+     },
+     {
+      "year": 2025,
+      "festival": "Durga",
+      "phase": "during",
+      "assessed_readings": 0,
+      "status": "no_table"
+     },
+     {
+      "year": 2025,
+      "festival": "Durga",
+      "phase": "after",
+      "assessed_readings": 0,
+      "status": "no_table"
+     }
+    ]
+   },
+   "parameter_gaps": [
+    {
+     "parameter": "pH",
+     "rows": 15,
+     "numeric": 13,
+     "bdl": 0,
+     "missing": 2,
+     "note": "2 missing / not sampled"
+    },
+    {
+     "parameter": "Dissolved oxygen",
+     "rows": 15,
+     "numeric": 13,
+     "bdl": 0,
+     "missing": 2,
+     "note": "2 missing / not sampled"
+    },
+    {
+     "parameter": "BOD",
+     "rows": 15,
+     "numeric": 13,
+     "bdl": 0,
+     "missing": 2,
+     "note": "2 missing / not sampled"
+    },
+    {
+     "parameter": "COD",
+     "rows": 15,
+     "numeric": 13,
+     "bdl": 0,
+     "missing": 2,
+     "note": "2 missing / not sampled"
+    },
+    {
+     "parameter": "Total solids",
+     "rows": 15,
+     "numeric": 13,
+     "bdl": 0,
+     "missing": 2,
+     "note": "2 missing / not sampled"
+    },
+    {
+     "parameter": "Dissolved solids",
+     "rows": 15,
+     "numeric": 13,
+     "bdl": 0,
+     "missing": 2,
+     "note": "2 missing / not sampled"
+    },
+    {
+     "parameter": "Suspended solids",
+     "rows": 12,
+     "numeric": 10,
+     "bdl": 0,
+     "missing": 2,
+     "note": "2 missing / not sampled"
+    },
+    {
+     "parameter": "Turbidity",
+     "rows": 15,
+     "numeric": 13,
+     "bdl": 0,
+     "missing": 2,
+     "note": "2 missing / not sampled"
+    },
+    {
+     "parameter": "Conductivity",
+     "rows": 15,
+     "numeric": 13,
+     "bdl": 0,
+     "missing": 2,
+     "note": "2 missing / not sampled"
+    },
+    {
+     "parameter": "Chromium",
+     "rows": 15,
+     "numeric": 4,
+     "bdl": 9,
+     "missing": 2,
+     "note": "2 missing / not sampled"
+    },
+    {
+     "parameter": "Lead",
+     "rows": 15,
+     "numeric": 7,
+     "bdl": 6,
+     "missing": 2,
+     "note": "2 missing / not sampled"
+    },
+    {
+     "parameter": "Zinc",
+     "rows": 15,
+     "numeric": 10,
+     "bdl": 3,
+     "missing": 2,
+     "note": "2 missing / not sampled"
+    },
+    {
+     "parameter": "Copper",
+     "rows": 15,
+     "numeric": 8,
+     "bdl": 5,
+     "missing": 2,
+     "note": "2 missing / not sampled"
+    }
+   ],
+   "phase_series": {
+    "Dissolved oxygen": [
+     {
+      "year": 2023,
+      "festival": "Ganesh",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 5.6,
+        "outcome": "ok"
+       },
+       {
+        "phase": "during",
+        "value": 4.5,
+        "outcome": "breach"
+       },
+       {
+        "phase": "after",
+        "value": 0.0,
+        "outcome": "breach"
+       }
+      ]
+     },
+     {
+      "year": 2023,
+      "festival": "Durga",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 0.0,
+        "outcome": "breach"
+       },
+       {
+        "phase": "during",
+        "value": 0.0,
+        "outcome": "breach"
+       },
+       {
+        "phase": "after",
+        "value": 4.2,
+        "outcome": "breach"
+       }
+      ]
+     },
+     {
+      "year": 2024,
+      "festival": "Ganesh",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 5.2,
+        "outcome": "ok"
+       },
+       {
+        "phase": "during",
+        "value": 4.1,
+        "outcome": "breach"
+       },
+       {
+        "phase": "after",
+        "value": 4.2,
+        "outcome": "breach"
+       }
+      ]
+     },
+     {
+      "year": 2024,
+      "festival": "Durga",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 4.2,
+        "outcome": "breach"
+       },
+       {
+        "phase": "during",
+        "value": 2.2,
+        "outcome": "breach"
+       },
+       {
+        "phase": "after",
+        "value": 2.4,
+        "outcome": "breach"
+       }
+      ]
+     },
+     {
+      "year": 2025,
+      "festival": "Ganesh",
+      "points": [
+       {
+        "phase": "pre",
+        "value": null,
+        "outcome": "missing"
+       },
+       {
+        "phase": "during",
+        "value": 0.0,
+        "outcome": "breach"
+       },
+       {
+        "phase": "after",
+        "value": null,
+        "outcome": "missing"
+       }
+      ]
+     }
+    ],
+    "BOD": [
+     {
+      "year": 2023,
+      "festival": "Ganesh",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 3.8,
+        "outcome": "breach"
+       },
+       {
+        "phase": "during",
+        "value": 4.2,
+        "outcome": "breach"
+       },
+       {
+        "phase": "after",
+        "value": 10.0,
+        "outcome": "breach"
+       }
+      ]
+     },
+     {
+      "year": 2023,
+      "festival": "Durga",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 9.2,
+        "outcome": "breach"
+       },
+       {
+        "phase": "during",
+        "value": 9.0,
+        "outcome": "breach"
+       },
+       {
+        "phase": "after",
+        "value": 9.4,
+        "outcome": "breach"
+       }
+      ]
+     },
+     {
+      "year": 2024,
+      "festival": "Ganesh",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 4.2,
+        "outcome": "breach"
+       },
+       {
+        "phase": "during",
+        "value": 13.2,
+        "outcome": "breach"
+       },
+       {
+        "phase": "after",
+        "value": 14.0,
+        "outcome": "breach"
+       }
+      ]
+     },
+     {
+      "year": 2024,
+      "festival": "Durga",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 6.0,
+        "outcome": "breach"
+       },
+       {
+        "phase": "during",
+        "value": 8.0,
+        "outcome": "breach"
+       },
+       {
+        "phase": "after",
+        "value": 8.2,
+        "outcome": "breach"
+       }
+      ]
+     },
+     {
+      "year": 2025,
+      "festival": "Ganesh",
+      "points": [
+       {
+        "phase": "pre",
+        "value": null,
+        "outcome": "missing"
+       },
+       {
+        "phase": "during",
+        "value": 8.0,
+        "outcome": "breach"
+       },
+       {
+        "phase": "after",
+        "value": null,
+        "outcome": "missing"
+       }
+      ]
+     }
+    ],
+    "pH": [
+     {
+      "year": 2023,
+      "festival": "Ganesh",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 7.71,
+        "outcome": "ok"
+       },
+       {
+        "phase": "during",
+        "value": 7.37,
+        "outcome": "ok"
+       },
+       {
+        "phase": "after",
+        "value": 7.2,
+        "outcome": "ok"
+       }
+      ]
+     },
+     {
+      "year": 2023,
+      "festival": "Durga",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 7.32,
+        "outcome": "ok"
+       },
+       {
+        "phase": "during",
+        "value": 7.55,
+        "outcome": "ok"
+       },
+       {
+        "phase": "after",
+        "value": 7.81,
+        "outcome": "ok"
+       }
+      ]
+     },
+     {
+      "year": 2024,
+      "festival": "Ganesh",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 7.27,
+        "outcome": "ok"
+       },
+       {
+        "phase": "during",
+        "value": 7.36,
+        "outcome": "ok"
+       },
+       {
+        "phase": "after",
+        "value": 7.22,
+        "outcome": "ok"
+       }
+      ]
+     },
+     {
+      "year": 2024,
+      "festival": "Durga",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 7.03,
+        "outcome": "ok"
+       },
+       {
+        "phase": "during",
+        "value": 6.87,
+        "outcome": "ok"
+       },
+       {
+        "phase": "after",
+        "value": 7.24,
+        "outcome": "ok"
+       }
+      ]
+     },
+     {
+      "year": 2025,
+      "festival": "Ganesh",
+      "points": [
+       {
+        "phase": "pre",
+        "value": null,
+        "outcome": "missing"
+       },
+       {
+        "phase": "during",
+        "value": 7.36,
+        "outcome": "ok"
+       },
+       {
+        "phase": "after",
+        "value": null,
+        "outcome": "missing"
+       }
+      ]
+     }
+    ]
+   },
+   "festivals_present": [
+    "Durga",
+    "Ganesh"
+   ],
+   "years_present": [
+    2023,
+    2024,
+    2025
+   ],
+   "rank": 1
+  },
+  {
+   "site": "Malikhedi kund",
+   "short_name": "Malikhedi",
+   "water_body": "Kund",
+   "water_bodies": [
+    "Kund"
+   ],
+   "site_ambiguous": false,
+   "site_match_confidence": "high",
+   "names_as_printed": [
+    "Maalikhedi visarjan kund, Bhopal",
+    "Maalikhedi visarjan kund,bhopal",
+    "Maalikhedi Visarjan Kund, Bhopal"
+   ],
+   "severity": 54.9,
+   "severity_components": {
+    "Dissolved oxygen": 0.693,
+    "BOD": 0.676,
+    "pH": 0.0,
+    "worst_value_penalty": 0.464
+   },
+   "tier": {
+    "key": "high",
+    "label_en": "High concern",
+    "label_hi": "उच्च चिंता",
+    "colour": "orange"
+   },
+   "evidence": {
+    "key": "strong",
+    "label_en": "Strong evidence",
+    "label_hi": "मज़बूत साक्ष्य",
+    "readings": 39,
+    "combos": 13,
+    "expected_combos": 18
+   },
+   "testing_priority": {
+    "score": 28.2,
+    "missing_combos": 5,
+    "missing_readings": 6,
+    "rank": 2
+   },
+   "year_trend": "worsening",
+   "reason_en": "Malikhedi: DO below 5 mg/l in 9 of 13 readings (lowest 0.6); BOD above 3 mg/l in 11 of 13 (highest 16.8).",
+   "reason_hi": "Malikhedi: 13 में से 9 रीडिंग में DO 5 mg/l से कम (न्यूनतम 0.6); 13 में से 11 रीडिंग में BOD 3 mg/l से अधिक (अधिकतम 16.8)।",
+   "summary": {
+    "Dissolved oxygen": {
+     "sampled": 13,
+     "breaches": 9,
+     "breach_rate": 0.6923076923076923,
+     "worst_value": 0.6,
+     "bdl": 0,
+     "missing": 2,
+     "worst_reading": {
+      "year": 2025,
+      "festival": "Ganesh",
+      "phase": "during",
+      "value": 0.6,
+      "unit": "mg/l",
+      "source_page": 29
+     },
+     "by_festival": {
+      "Ganesh": {
+       "sampled": 7,
+       "breaches": 4,
+       "breach_rate": 0.5714285714285714
+      },
+      "Durga": {
+       "sampled": 6,
+       "breaches": 5,
+       "breach_rate": 0.8333333333333334
+      }
+     },
+     "by_year": {
+      "2023": {
+       "sampled": 6,
+       "breaches": 3,
+       "breach_rate": 0.5
+      },
+      "2024": {
+       "sampled": 6,
+       "breaches": 5,
+       "breach_rate": 0.8333333333333334
+      },
+      "2025": {
+       "sampled": 1,
+       "breaches": 1,
+       "breach_rate": 1.0
+      }
+     },
+     "by_phase": {
+      "pre": {
+       "sampled": 4,
+       "breaches": 3,
+       "breach_rate": 0.75
+      },
+      "during": {
+       "sampled": 5,
+       "breaches": 4,
+       "breach_rate": 0.8
+      },
+      "after": {
+       "sampled": 4,
+       "breaches": 2,
+       "breach_rate": 0.5
+      }
+     }
+    },
+    "BOD": {
+     "sampled": 13,
+     "breaches": 11,
+     "breach_rate": 0.8461538461538461,
+     "worst_value": 16.8,
+     "bdl": 0,
+     "missing": 2,
+     "worst_reading": {
+      "year": 2023,
+      "festival": "Ganesh",
+      "phase": "after",
+      "value": 16.8,
+      "unit": "mg/l",
+      "source_page": 27
+     },
+     "by_festival": {
+      "Ganesh": {
+       "sampled": 7,
+       "breaches": 5,
+       "breach_rate": 0.7142857142857143
+      },
+      "Durga": {
+       "sampled": 6,
+       "breaches": 6,
+       "breach_rate": 1.0
+      }
+     },
+     "by_year": {
+      "2023": {
+       "sampled": 6,
+       "breaches": 4,
+       "breach_rate": 0.6666666666666666
+      },
+      "2024": {
+       "sampled": 6,
+       "breaches": 6,
+       "breach_rate": 1.0
+      },
+      "2025": {
+       "sampled": 1,
+       "breaches": 1,
+       "breach_rate": 1.0
+      }
+     },
+     "by_phase": {
+      "pre": {
+       "sampled": 4,
+       "breaches": 3,
+       "breach_rate": 0.75
+      },
+      "during": {
+       "sampled": 5,
+       "breaches": 4,
+       "breach_rate": 0.8
+      },
+      "after": {
+       "sampled": 4,
+       "breaches": 4,
+       "breach_rate": 1.0
+      }
+     }
+    },
+    "pH": {
+     "sampled": 13,
+     "breaches": 0,
+     "breach_rate": 0.0,
+     "worst_value": 7.01,
+     "bdl": 0,
+     "missing": 2,
+     "worst_reading": {
+      "year": 2024,
+      "festival": "Durga",
+      "phase": "after",
+      "value": 7.01,
+      "unit": "",
+      "source_page": 26
+     },
+     "by_festival": {
+      "Ganesh": {
+       "sampled": 7,
+       "breaches": 0,
+       "breach_rate": 0.0
+      },
+      "Durga": {
+       "sampled": 6,
+       "breaches": 0,
+       "breach_rate": 0.0
+      }
+     },
+     "by_year": {
+      "2023": {
+       "sampled": 6,
+       "breaches": 0,
+       "breach_rate": 0.0
+      },
+      "2024": {
+       "sampled": 6,
+       "breaches": 0,
+       "breach_rate": 0.0
+      },
+      "2025": {
+       "sampled": 1,
+       "breaches": 0,
+       "breach_rate": 0.0
+      }
+     },
+     "by_phase": {
+      "pre": {
+       "sampled": 4,
+       "breaches": 0,
+       "breach_rate": 0.0
+      },
+      "during": {
+       "sampled": 5,
+       "breaches": 0,
+       "breach_rate": 0.0
+      },
+      "after": {
+       "sampled": 4,
+       "breaches": 0,
+       "breach_rate": 0.0
+      }
+     }
+    }
+   },
+   "coverage": {
+    "covered": 13,
+    "expected": 18,
+    "gaps": [
+     {
+      "year": 2025,
+      "festival": "Ganesh",
+      "phase": "pre",
+      "assessed_readings": 0,
+      "status": "tabled_but_missing"
+     },
+     {
+      "year": 2025,
+      "festival": "Ganesh",
+      "phase": "after",
+      "assessed_readings": 0,
+      "status": "tabled_but_missing"
+     },
+     {
+      "year": 2025,
+      "festival": "Durga",
+      "phase": "pre",
+      "assessed_readings": 0,
+      "status": "no_table"
+     },
+     {
+      "year": 2025,
+      "festival": "Durga",
+      "phase": "during",
+      "assessed_readings": 0,
+      "status": "no_table"
+     },
+     {
+      "year": 2025,
+      "festival": "Durga",
+      "phase": "after",
+      "assessed_readings": 0,
+      "status": "no_table"
+     }
+    ],
+    "combos": [
+     {
+      "year": 2023,
+      "festival": "Ganesh",
+      "phase": "pre",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2023,
+      "festival": "Ganesh",
+      "phase": "during",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2023,
+      "festival": "Ganesh",
+      "phase": "after",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2023,
+      "festival": "Durga",
+      "phase": "pre",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2023,
+      "festival": "Durga",
+      "phase": "during",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2023,
+      "festival": "Durga",
+      "phase": "after",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2024,
+      "festival": "Ganesh",
+      "phase": "pre",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2024,
+      "festival": "Ganesh",
+      "phase": "during",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2024,
+      "festival": "Ganesh",
+      "phase": "after",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2024,
+      "festival": "Durga",
+      "phase": "pre",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2024,
+      "festival": "Durga",
+      "phase": "during",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2024,
+      "festival": "Durga",
+      "phase": "after",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2025,
+      "festival": "Ganesh",
+      "phase": "pre",
+      "assessed_readings": 0,
+      "status": "tabled_but_missing"
+     },
+     {
+      "year": 2025,
+      "festival": "Ganesh",
+      "phase": "during",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2025,
+      "festival": "Ganesh",
+      "phase": "after",
+      "assessed_readings": 0,
+      "status": "tabled_but_missing"
+     },
+     {
+      "year": 2025,
+      "festival": "Durga",
+      "phase": "pre",
+      "assessed_readings": 0,
+      "status": "no_table"
+     },
+     {
+      "year": 2025,
+      "festival": "Durga",
+      "phase": "during",
+      "assessed_readings": 0,
+      "status": "no_table"
+     },
+     {
+      "year": 2025,
+      "festival": "Durga",
+      "phase": "after",
+      "assessed_readings": 0,
+      "status": "no_table"
+     }
+    ]
+   },
+   "parameter_gaps": [
+    {
+     "parameter": "pH",
+     "rows": 15,
+     "numeric": 13,
+     "bdl": 0,
+     "missing": 2,
+     "note": "2 missing / not sampled"
+    },
+    {
+     "parameter": "Dissolved oxygen",
+     "rows": 15,
+     "numeric": 13,
+     "bdl": 0,
+     "missing": 2,
+     "note": "2 missing / not sampled"
+    },
+    {
+     "parameter": "BOD",
+     "rows": 15,
+     "numeric": 13,
+     "bdl": 0,
+     "missing": 2,
+     "note": "2 missing / not sampled"
+    },
+    {
+     "parameter": "COD",
+     "rows": 15,
+     "numeric": 13,
+     "bdl": 0,
+     "missing": 2,
+     "note": "2 missing / not sampled"
+    },
+    {
+     "parameter": "Total solids",
+     "rows": 15,
+     "numeric": 13,
+     "bdl": 0,
+     "missing": 2,
+     "note": "2 missing / not sampled"
+    },
+    {
+     "parameter": "Dissolved solids",
+     "rows": 15,
+     "numeric": 13,
+     "bdl": 0,
+     "missing": 2,
+     "note": "2 missing / not sampled"
+    },
+    {
+     "parameter": "Suspended solids",
+     "rows": 12,
+     "numeric": 10,
+     "bdl": 0,
+     "missing": 2,
+     "note": "2 missing / not sampled"
+    },
+    {
+     "parameter": "Turbidity",
+     "rows": 15,
+     "numeric": 13,
+     "bdl": 0,
+     "missing": 2,
+     "note": "2 missing / not sampled"
+    },
+    {
+     "parameter": "Conductivity",
+     "rows": 15,
+     "numeric": 13,
+     "bdl": 0,
+     "missing": 2,
+     "note": "2 missing / not sampled"
+    },
+    {
+     "parameter": "Chromium",
+     "rows": 15,
+     "numeric": 4,
+     "bdl": 9,
+     "missing": 2,
+     "note": "2 missing / not sampled"
+    },
+    {
+     "parameter": "Lead",
+     "rows": 15,
+     "numeric": 6,
+     "bdl": 7,
+     "missing": 2,
+     "note": "2 missing / not sampled"
+    },
+    {
+     "parameter": "Zinc",
+     "rows": 15,
+     "numeric": 10,
+     "bdl": 3,
+     "missing": 2,
+     "note": "2 missing / not sampled"
+    },
+    {
+     "parameter": "Copper",
+     "rows": 15,
+     "numeric": 8,
+     "bdl": 5,
+     "missing": 2,
+     "note": "2 missing / not sampled"
+    }
+   ],
+   "phase_series": {
+    "Dissolved oxygen": [
+     {
+      "year": 2023,
+      "festival": "Ganesh",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 7.5,
+        "outcome": "ok"
+       },
+       {
+        "phase": "during",
+        "value": 7.0,
+        "outcome": "ok"
+       },
+       {
+        "phase": "after",
+        "value": 3.2,
+        "outcome": "breach"
+       }
+      ]
+     },
+     {
+      "year": 2023,
+      "festival": "Durga",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 4.6,
+        "outcome": "breach"
+       },
+       {
+        "phase": "during",
+        "value": 4.3,
+        "outcome": "breach"
+       },
+       {
+        "phase": "after",
+        "value": 10.4,
+        "outcome": "ok"
+       }
+      ]
+     },
+     {
+      "year": 2024,
+      "festival": "Ganesh",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 4.8,
+        "outcome": "breach"
+       },
+       {
+        "phase": "during",
+        "value": 3.8,
+        "outcome": "breach"
+       },
+       {
+        "phase": "after",
+        "value": 6.5,
+        "outcome": "ok"
+       }
+      ]
+     },
+     {
+      "year": 2024,
+      "festival": "Durga",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 4.5,
+        "outcome": "breach"
+       },
+       {
+        "phase": "during",
+        "value": 4.1,
+        "outcome": "breach"
+       },
+       {
+        "phase": "after",
+        "value": 4.0,
+        "outcome": "breach"
+       }
+      ]
+     },
+     {
+      "year": 2025,
+      "festival": "Ganesh",
+      "points": [
+       {
+        "phase": "pre",
+        "value": null,
+        "outcome": "missing"
+       },
+       {
+        "phase": "during",
+        "value": 0.6,
+        "outcome": "breach"
+       },
+       {
+        "phase": "after",
+        "value": null,
+        "outcome": "missing"
+       }
+      ]
+     }
+    ],
+    "BOD": [
+     {
+      "year": 2023,
+      "festival": "Ganesh",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 1.6,
+        "outcome": "ok"
+       },
+       {
+        "phase": "during",
+        "value": 1.8,
+        "outcome": "ok"
+       },
+       {
+        "phase": "after",
+        "value": 16.8,
+        "outcome": "breach"
+       }
+      ]
+     },
+     {
+      "year": 2023,
+      "festival": "Durga",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 6.8,
+        "outcome": "breach"
+       },
+       {
+        "phase": "during",
+        "value": 6.8,
+        "outcome": "breach"
+       },
+       {
+        "phase": "after",
+        "value": 6.6,
+        "outcome": "breach"
+       }
+      ]
+     },
+     {
+      "year": 2024,
+      "festival": "Ganesh",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 6.6,
+        "outcome": "breach"
+       },
+       {
+        "phase": "during",
+        "value": 6.8,
+        "outcome": "breach"
+       },
+       {
+        "phase": "after",
+        "value": 8.4,
+        "outcome": "breach"
+       }
+      ]
+     },
+     {
+      "year": 2024,
+      "festival": "Durga",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 6.8,
+        "outcome": "breach"
+       },
+       {
+        "phase": "during",
+        "value": 5.0,
+        "outcome": "breach"
+       },
+       {
+        "phase": "after",
+        "value": 5.2,
+        "outcome": "breach"
+       }
+      ]
+     },
+     {
+      "year": 2025,
+      "festival": "Ganesh",
+      "points": [
+       {
+        "phase": "pre",
+        "value": null,
+        "outcome": "missing"
+       },
+       {
+        "phase": "during",
+        "value": 5.8,
+        "outcome": "breach"
+       },
+       {
+        "phase": "after",
+        "value": null,
+        "outcome": "missing"
+       }
+      ]
+     }
+    ],
+    "pH": [
+     {
+      "year": 2023,
+      "festival": "Ganesh",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 7.65,
+        "outcome": "ok"
+       },
+       {
+        "phase": "during",
+        "value": 7.81,
+        "outcome": "ok"
+       },
+       {
+        "phase": "after",
+        "value": 7.11,
+        "outcome": "ok"
+       }
+      ]
+     },
+     {
+      "year": 2023,
+      "festival": "Durga",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 7.57,
+        "outcome": "ok"
+       },
+       {
+        "phase": "during",
+        "value": 7.37,
+        "outcome": "ok"
+       },
+       {
+        "phase": "after",
+        "value": 7.81,
+        "outcome": "ok"
+       }
+      ]
+     },
+     {
+      "year": 2024,
+      "festival": "Ganesh",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 7.48,
+        "outcome": "ok"
+       },
+       {
+        "phase": "during",
+        "value": 7.38,
+        "outcome": "ok"
+       },
+       {
+        "phase": "after",
+        "value": 7.38,
+        "outcome": "ok"
+       }
+      ]
+     },
+     {
+      "year": 2024,
+      "festival": "Durga",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 7.29,
+        "outcome": "ok"
+       },
+       {
+        "phase": "during",
+        "value": 7.3,
+        "outcome": "ok"
+       },
+       {
+        "phase": "after",
+        "value": 7.01,
+        "outcome": "ok"
+       }
+      ]
+     },
+     {
+      "year": 2025,
+      "festival": "Ganesh",
+      "points": [
+       {
+        "phase": "pre",
+        "value": null,
+        "outcome": "missing"
+       },
+       {
+        "phase": "during",
+        "value": 7.53,
+        "outcome": "ok"
+       },
+       {
+        "phase": "after",
+        "value": null,
+        "outcome": "missing"
+       }
+      ]
+     }
+    ]
+   },
+   "festivals_present": [
+    "Durga",
+    "Ganesh"
+   ],
+   "years_present": [
+    2023,
+    2024,
+    2025
+   ],
+   "rank": 2
+  },
+  {
+   "site": "Shahpura lake ghat",
+   "short_name": "Shahpura",
+   "water_body": "Shahpura Lake",
+   "water_bodies": [
+    "Shahpura Lake"
+   ],
+   "site_ambiguous": false,
+   "site_match_confidence": "high",
+   "names_as_printed": [
+    "Murti visarjan ghat at Shahpura lake,Bhopal",
+    "Murti-visarjan ghat at Shahpura lake,Bhopal",
+    "Murti-Visarjan Ghat At Shahpura Lake, Bhopal",
+    "Murti visarjan ghat at Shahpura ghat, Bhopal",
+    "Murti-visarjan ghat at Shahpura lake, Bhopal"
+   ],
+   "severity": 36.9,
+   "severity_components": {
+    "Dissolved oxygen": 0.278,
+    "BOD": 0.659,
+    "pH": 0.0,
+    "worst_value_penalty": 0.273
+   },
+   "tier": {
+    "key": "moderate",
+    "label_en": "Moderate concern",
+    "label_hi": "मध्यम चिंता",
+    "colour": "yellow"
+   },
+   "evidence": {
+    "key": "strong",
+    "label_en": "Strong evidence",
+    "label_hi": "मज़बूत साक्ष्य",
+    "readings": 54,
+    "combos": 18,
+    "expected_combos": 18
+   },
+   "testing_priority": {
+    "score": 1.5,
+    "missing_combos": 0,
+    "missing_readings": 0,
+    "rank": 5
+   },
+   "year_trend": "stable",
+   "reason_en": "Shahpura: DO below 5 mg/l in 5 of 18 readings (lowest 2.5); BOD above 3 mg/l in 18 of 18 (highest 11.6).",
+   "reason_hi": "Shahpura: 18 में से 5 रीडिंग में DO 5 mg/l से कम (न्यूनतम 2.5); 18 में से 18 रीडिंग में BOD 3 mg/l से अधिक (अधिकतम 11.6)।",
+   "summary": {
+    "Dissolved oxygen": {
+     "sampled": 18,
+     "breaches": 5,
+     "breach_rate": 0.2777777777777778,
+     "worst_value": 2.5,
+     "bdl": 0,
+     "missing": 0,
+     "worst_reading": {
+      "year": 2025,
+      "festival": "Durga",
+      "phase": "pre",
+      "value": 2.5,
+      "unit": "mg/l",
+      "source_page": 65
+     },
+     "by_festival": {
+      "Ganesh": {
+       "sampled": 9,
+       "breaches": 0,
+       "breach_rate": 0.0
+      },
+      "Durga": {
+       "sampled": 9,
+       "breaches": 5,
+       "breach_rate": 0.5555555555555556
+      }
+     },
+     "by_year": {
+      "2023": {
+       "sampled": 6,
+       "breaches": 2,
+       "breach_rate": 0.3333333333333333
+      },
+      "2024": {
+       "sampled": 6,
+       "breaches": 1,
+       "breach_rate": 0.16666666666666666
+      },
+      "2025": {
+       "sampled": 6,
+       "breaches": 2,
+       "breach_rate": 0.3333333333333333
+      }
+     },
+     "by_phase": {
+      "pre": {
+       "sampled": 6,
+       "breaches": 2,
+       "breach_rate": 0.3333333333333333
+      },
+      "during": {
+       "sampled": 6,
+       "breaches": 2,
+       "breach_rate": 0.3333333333333333
+      },
+      "after": {
+       "sampled": 6,
+       "breaches": 1,
+       "breach_rate": 0.16666666666666666
+      }
+     }
+    },
+    "BOD": {
+     "sampled": 18,
+     "breaches": 18,
+     "breach_rate": 1.0,
+     "worst_value": 11.6,
+     "bdl": 0,
+     "missing": 0,
+     "worst_reading": {
+      "year": 2024,
+      "festival": "Durga",
+      "phase": "after",
+      "value": 11.6,
+      "unit": "mg/l",
+      "source_page": 26
+     },
+     "by_festival": {
+      "Ganesh": {
+       "sampled": 9,
+       "breaches": 9,
+       "breach_rate": 1.0
+      },
+      "Durga": {
+       "sampled": 9,
+       "breaches": 9,
+       "breach_rate": 1.0
+      }
+     },
+     "by_year": {
+      "2023": {
+       "sampled": 6,
+       "breaches": 6,
+       "breach_rate": 1.0
+      },
+      "2024": {
+       "sampled": 6,
+       "breaches": 6,
+       "breach_rate": 1.0
+      },
+      "2025": {
+       "sampled": 6,
+       "breaches": 6,
+       "breach_rate": 1.0
+      }
+     },
+     "by_phase": {
+      "pre": {
+       "sampled": 6,
+       "breaches": 6,
+       "breach_rate": 1.0
+      },
+      "during": {
+       "sampled": 6,
+       "breaches": 6,
+       "breach_rate": 1.0
+      },
+      "after": {
+       "sampled": 6,
+       "breaches": 6,
+       "breach_rate": 1.0
+      }
+     }
+    },
+    "pH": {
+     "sampled": 18,
+     "breaches": 0,
+     "breach_rate": 0.0,
+     "worst_value": 7.92,
+     "bdl": 0,
+     "missing": 0,
+     "worst_reading": {
+      "year": 2024,
+      "festival": "Ganesh",
+      "phase": "after",
+      "value": 7.92,
+      "unit": "",
+      "source_page": 72
+     },
+     "by_festival": {
+      "Ganesh": {
+       "sampled": 9,
+       "breaches": 0,
+       "breach_rate": 0.0
+      },
+      "Durga": {
+       "sampled": 9,
+       "breaches": 0,
+       "breach_rate": 0.0
+      }
+     },
+     "by_year": {
+      "2023": {
+       "sampled": 6,
+       "breaches": 0,
+       "breach_rate": 0.0
+      },
+      "2024": {
+       "sampled": 6,
+       "breaches": 0,
+       "breach_rate": 0.0
+      },
+      "2025": {
+       "sampled": 6,
+       "breaches": 0,
+       "breach_rate": 0.0
+      }
+     },
+     "by_phase": {
+      "pre": {
+       "sampled": 6,
+       "breaches": 0,
+       "breach_rate": 0.0
+      },
+      "during": {
+       "sampled": 6,
+       "breaches": 0,
+       "breach_rate": 0.0
+      },
+      "after": {
+       "sampled": 6,
+       "breaches": 0,
+       "breach_rate": 0.0
+      }
+     }
+    }
+   },
+   "coverage": {
+    "covered": 18,
+    "expected": 18,
+    "gaps": [],
+    "combos": [
+     {
+      "year": 2023,
+      "festival": "Ganesh",
+      "phase": "pre",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2023,
+      "festival": "Ganesh",
+      "phase": "during",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2023,
+      "festival": "Ganesh",
+      "phase": "after",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2023,
+      "festival": "Durga",
+      "phase": "pre",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2023,
+      "festival": "Durga",
+      "phase": "during",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2023,
+      "festival": "Durga",
+      "phase": "after",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2024,
+      "festival": "Ganesh",
+      "phase": "pre",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2024,
+      "festival": "Ganesh",
+      "phase": "during",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2024,
+      "festival": "Ganesh",
+      "phase": "after",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2024,
+      "festival": "Durga",
+      "phase": "pre",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2024,
+      "festival": "Durga",
+      "phase": "during",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2024,
+      "festival": "Durga",
+      "phase": "after",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2025,
+      "festival": "Ganesh",
+      "phase": "pre",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2025,
+      "festival": "Ganesh",
+      "phase": "during",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2025,
+      "festival": "Ganesh",
+      "phase": "after",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2025,
+      "festival": "Durga",
+      "phase": "pre",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2025,
+      "festival": "Durga",
+      "phase": "during",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2025,
+      "festival": "Durga",
+      "phase": "after",
+      "assessed_readings": 3,
+      "status": "covered"
+     }
+    ]
+   },
+   "parameter_gaps": [],
+   "phase_series": {
+    "Dissolved oxygen": [
+     {
+      "year": 2023,
+      "festival": "Ganesh",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 5.9,
+        "outcome": "ok"
+       },
+       {
+        "phase": "during",
+        "value": 5.2,
+        "outcome": "ok"
+       },
+       {
+        "phase": "after",
+        "value": 5.0,
+        "outcome": "ok"
+       }
+      ]
+     },
+     {
+      "year": 2023,
+      "festival": "Durga",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 4.5,
+        "outcome": "breach"
+       },
+       {
+        "phase": "during",
+        "value": 4.0,
+        "outcome": "breach"
+       },
+       {
+        "phase": "after",
+        "value": 5.0,
+        "outcome": "ok"
+       }
+      ]
+     },
+     {
+      "year": 2024,
+      "festival": "Ganesh",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 7.4,
+        "outcome": "ok"
+       },
+       {
+        "phase": "during",
+        "value": 6.8,
+        "outcome": "ok"
+       },
+       {
+        "phase": "after",
+        "value": 6.3,
+        "outcome": "ok"
+       }
+      ]
+     },
+     {
+      "year": 2024,
+      "festival": "Durga",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 6.8,
+        "outcome": "ok"
+       },
+       {
+        "phase": "during",
+        "value": 5.4,
+        "outcome": "ok"
+       },
+       {
+        "phase": "after",
+        "value": 3.8,
+        "outcome": "breach"
+       }
+      ]
+     },
+     {
+      "year": 2025,
+      "festival": "Ganesh",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 7.0,
+        "outcome": "ok"
+       },
+       {
+        "phase": "during",
+        "value": 6.0,
+        "outcome": "ok"
+       },
+       {
+        "phase": "after",
+        "value": 6.5,
+        "outcome": "ok"
+       }
+      ]
+     },
+     {
+      "year": 2025,
+      "festival": "Durga",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 2.5,
+        "outcome": "breach"
+       },
+       {
+        "phase": "during",
+        "value": 2.8,
+        "outcome": "breach"
+       },
+       {
+        "phase": "after",
+        "value": 7.4,
+        "outcome": "ok"
+       }
+      ]
+     }
+    ],
+    "BOD": [
+     {
+      "year": 2023,
+      "festival": "Ganesh",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 6.4,
+        "outcome": "breach"
+       },
+       {
+        "phase": "during",
+        "value": 8.4,
+        "outcome": "breach"
+       },
+       {
+        "phase": "after",
+        "value": 10.4,
+        "outcome": "breach"
+       }
+      ]
+     },
+     {
+      "year": 2023,
+      "festival": "Durga",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 6.4,
+        "outcome": "breach"
+       },
+       {
+        "phase": "during",
+        "value": 6.8,
+        "outcome": "breach"
+       },
+       {
+        "phase": "after",
+        "value": 7.8,
+        "outcome": "breach"
+       }
+      ]
+     },
+     {
+      "year": 2024,
+      "festival": "Ganesh",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 5.8,
+        "outcome": "breach"
+       },
+       {
+        "phase": "during",
+        "value": 10.0,
+        "outcome": "breach"
+       },
+       {
+        "phase": "after",
+        "value": 6.8,
+        "outcome": "breach"
+       }
+      ]
+     },
+     {
+      "year": 2024,
+      "festival": "Durga",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 10.8,
+        "outcome": "breach"
+       },
+       {
+        "phase": "during",
+        "value": 11.2,
+        "outcome": "breach"
+       },
+       {
+        "phase": "after",
+        "value": 11.6,
+        "outcome": "breach"
+       }
+      ]
+     },
+     {
+      "year": 2025,
+      "festival": "Ganesh",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 4.2,
+        "outcome": "breach"
+       },
+       {
+        "phase": "during",
+        "value": 5.0,
+        "outcome": "breach"
+       },
+       {
+        "phase": "after",
+        "value": 4.8,
+        "outcome": "breach"
+       }
+      ]
+     },
+     {
+      "year": 2025,
+      "festival": "Durga",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 6.8,
+        "outcome": "breach"
+       },
+       {
+        "phase": "during",
+        "value": 11.4,
+        "outcome": "breach"
+       },
+       {
+        "phase": "after",
+        "value": 10.4,
+        "outcome": "breach"
+       }
+      ]
+     }
+    ],
+    "pH": [
+     {
+      "year": 2023,
+      "festival": "Ganesh",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 7.32,
+        "outcome": "ok"
+       },
+       {
+        "phase": "during",
+        "value": 7.36,
+        "outcome": "ok"
+       },
+       {
+        "phase": "after",
+        "value": 7.76,
+        "outcome": "ok"
+       }
+      ]
+     },
+     {
+      "year": 2023,
+      "festival": "Durga",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 7.35,
+        "outcome": "ok"
+       },
+       {
+        "phase": "during",
+        "value": 7.73,
+        "outcome": "ok"
+       },
+       {
+        "phase": "after",
+        "value": 7.76,
+        "outcome": "ok"
+       }
+      ]
+     },
+     {
+      "year": 2024,
+      "festival": "Ganesh",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 7.88,
+        "outcome": "ok"
+       },
+       {
+        "phase": "during",
+        "value": 7.61,
+        "outcome": "ok"
+       },
+       {
+        "phase": "after",
+        "value": 7.92,
+        "outcome": "ok"
+       }
+      ]
+     },
+     {
+      "year": 2024,
+      "festival": "Durga",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 7.36,
+        "outcome": "ok"
+       },
+       {
+        "phase": "during",
+        "value": 7.35,
+        "outcome": "ok"
+       },
+       {
+        "phase": "after",
+        "value": 7.53,
+        "outcome": "ok"
+       }
+      ]
+     },
+     {
+      "year": 2025,
+      "festival": "Ganesh",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 7.7,
+        "outcome": "ok"
+       },
+       {
+        "phase": "during",
+        "value": 7.82,
+        "outcome": "ok"
+       },
+       {
+        "phase": "after",
+        "value": 7.84,
+        "outcome": "ok"
+       }
+      ]
+     },
+     {
+      "year": 2025,
+      "festival": "Durga",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 7.88,
+        "outcome": "ok"
+       },
+       {
+        "phase": "during",
+        "value": 7.36,
+        "outcome": "ok"
+       },
+       {
+        "phase": "after",
+        "value": 7.35,
+        "outcome": "ok"
+       }
+      ]
+     }
+    ]
+   },
+   "festivals_present": [
+    "Durga",
+    "Ganesh"
+   ],
+   "years_present": [
+    2023,
+    2024,
+    2025
+   ],
+   "rank": 3
+  },
+  {
+   "site": "Rani Kamlapati ghat / Kamla Park kund",
+   "short_name": "Rani Kamlapati / Kamla Park",
+   "water_body": "Lower Lake (as printed in Durga tables)",
+   "water_bodies": [
+    "Lower Lake (as printed in Durga tables)"
+   ],
+   "site_ambiguous": true,
+   "site_match_confidence": "medium",
+   "names_as_printed": [
+    "Rani kamlapati,kamla park,murti visarjan kund,Bhopal",
+    "Rani kamlapati visarjan ghat (lower lake)",
+    "Rani Kamlapati Visarjan Ghat (Lower Lake), Bhopal",
+    "Rani Kamlapati, Kamla Park, Murti Visarjan Kund, Bhopal",
+    "Rani kamlapati,kamla park,murti visarjan kund, Bhopal"
+   ],
+   "severity": 34.1,
+   "severity_components": {
+    "Dissolved oxygen": 0.253,
+    "BOD": 0.615,
+    "pH": 0.0,
+    "worst_value_penalty": 0.25
+   },
+   "tier": {
+    "key": "moderate",
+    "label_en": "Moderate concern",
+    "label_hi": "मध्यम चिंता",
+    "colour": "yellow"
+   },
+   "evidence": {
+    "key": "strong",
+    "label_en": "Strong evidence",
+    "label_hi": "मज़बूत साक्ष्य",
+    "readings": 54,
+    "combos": 18,
+    "expected_combos": 18
+   },
+   "testing_priority": {
+    "score": 1.4,
+    "missing_combos": 0,
+    "missing_readings": 0,
+    "rank": 7
+   },
+   "year_trend": "worsening",
+   "reason_en": "Rani Kamlapati / Kamla Park: DO below 5 mg/l in 6 of 18 readings (lowest 2.4); BOD above 3 mg/l in 18 of 18 (highest 9.2).",
+   "reason_hi": "Rani Kamlapati / Kamla Park: 18 में से 6 रीडिंग में DO 5 mg/l से कम (न्यूनतम 2.4); 18 में से 18 रीडिंग में BOD 3 mg/l से अधिक (अधिकतम 9.2)।",
+   "summary": {
+    "Dissolved oxygen": {
+     "sampled": 18,
+     "breaches": 6,
+     "breach_rate": 0.3333333333333333,
+     "worst_value": 2.4,
+     "bdl": 0,
+     "missing": 0,
+     "worst_reading": {
+      "year": 2025,
+      "festival": "Durga",
+      "phase": "during",
+      "value": 2.4,
+      "unit": "mg/l",
+      "source_page": 64
+     },
+     "by_festival": {
+      "Ganesh": {
+       "sampled": 9,
+       "breaches": 3,
+       "breach_rate": 0.3333333333333333
+      },
+      "Durga": {
+       "sampled": 9,
+       "breaches": 3,
+       "breach_rate": 0.3333333333333333
+      }
+     },
+     "by_year": {
+      "2023": {
+       "sampled": 6,
+       "breaches": 0,
+       "breach_rate": 0.0
+      },
+      "2024": {
+       "sampled": 6,
+       "breaches": 3,
+       "breach_rate": 0.5
+      },
+      "2025": {
+       "sampled": 6,
+       "breaches": 3,
+       "breach_rate": 0.5
+      }
+     },
+     "by_phase": {
+      "pre": {
+       "sampled": 6,
+       "breaches": 2,
+       "breach_rate": 0.3333333333333333
+      },
+      "during": {
+       "sampled": 6,
+       "breaches": 2,
+       "breach_rate": 0.3333333333333333
+      },
+      "after": {
+       "sampled": 6,
+       "breaches": 2,
+       "breach_rate": 0.3333333333333333
+      }
+     }
+    },
+    "BOD": {
+     "sampled": 18,
+     "breaches": 18,
+     "breach_rate": 1.0,
+     "worst_value": 9.2,
+     "bdl": 0,
+     "missing": 0,
+     "worst_reading": {
+      "year": 2023,
+      "festival": "Ganesh",
+      "phase": "after",
+      "value": 9.2,
+      "unit": "mg/l",
+      "source_page": 27
+     },
+     "by_festival": {
+      "Ganesh": {
+       "sampled": 9,
+       "breaches": 9,
+       "breach_rate": 1.0
+      },
+      "Durga": {
+       "sampled": 9,
+       "breaches": 9,
+       "breach_rate": 1.0
+      }
+     },
+     "by_year": {
+      "2023": {
+       "sampled": 6,
+       "breaches": 6,
+       "breach_rate": 1.0
+      },
+      "2024": {
+       "sampled": 6,
+       "breaches": 6,
+       "breach_rate": 1.0
+      },
+      "2025": {
+       "sampled": 6,
+       "breaches": 6,
+       "breach_rate": 1.0
+      }
+     },
+     "by_phase": {
+      "pre": {
+       "sampled": 6,
+       "breaches": 6,
+       "breach_rate": 1.0
+      },
+      "during": {
+       "sampled": 6,
+       "breaches": 6,
+       "breach_rate": 1.0
+      },
+      "after": {
+       "sampled": 6,
+       "breaches": 6,
+       "breach_rate": 1.0
+      }
+     }
+    },
+    "pH": {
+     "sampled": 18,
+     "breaches": 0,
+     "breach_rate": 0.0,
+     "worst_value": 8.35,
+     "bdl": 0,
+     "missing": 0,
+     "worst_reading": {
+      "year": 2023,
+      "festival": "Ganesh",
+      "phase": "during",
+      "value": 8.35,
+      "unit": "",
+      "source_page": 27
+     },
+     "by_festival": {
+      "Ganesh": {
+       "sampled": 9,
+       "breaches": 0,
+       "breach_rate": 0.0
+      },
+      "Durga": {
+       "sampled": 9,
+       "breaches": 0,
+       "breach_rate": 0.0
+      }
+     },
+     "by_year": {
+      "2023": {
+       "sampled": 6,
+       "breaches": 0,
+       "breach_rate": 0.0
+      },
+      "2024": {
+       "sampled": 6,
+       "breaches": 0,
+       "breach_rate": 0.0
+      },
+      "2025": {
+       "sampled": 6,
+       "breaches": 0,
+       "breach_rate": 0.0
+      }
+     },
+     "by_phase": {
+      "pre": {
+       "sampled": 6,
+       "breaches": 0,
+       "breach_rate": 0.0
+      },
+      "during": {
+       "sampled": 6,
+       "breaches": 0,
+       "breach_rate": 0.0
+      },
+      "after": {
+       "sampled": 6,
+       "breaches": 0,
+       "breach_rate": 0.0
+      }
+     }
+    }
+   },
+   "coverage": {
+    "covered": 18,
+    "expected": 18,
+    "gaps": [],
+    "combos": [
+     {
+      "year": 2023,
+      "festival": "Ganesh",
+      "phase": "pre",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2023,
+      "festival": "Ganesh",
+      "phase": "during",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2023,
+      "festival": "Ganesh",
+      "phase": "after",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2023,
+      "festival": "Durga",
+      "phase": "pre",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2023,
+      "festival": "Durga",
+      "phase": "during",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2023,
+      "festival": "Durga",
+      "phase": "after",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2024,
+      "festival": "Ganesh",
+      "phase": "pre",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2024,
+      "festival": "Ganesh",
+      "phase": "during",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2024,
+      "festival": "Ganesh",
+      "phase": "after",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2024,
+      "festival": "Durga",
+      "phase": "pre",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2024,
+      "festival": "Durga",
+      "phase": "during",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2024,
+      "festival": "Durga",
+      "phase": "after",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2025,
+      "festival": "Ganesh",
+      "phase": "pre",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2025,
+      "festival": "Ganesh",
+      "phase": "during",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2025,
+      "festival": "Ganesh",
+      "phase": "after",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2025,
+      "festival": "Durga",
+      "phase": "pre",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2025,
+      "festival": "Durga",
+      "phase": "during",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2025,
+      "festival": "Durga",
+      "phase": "after",
+      "assessed_readings": 3,
+      "status": "covered"
+     }
+    ]
+   },
+   "parameter_gaps": [],
+   "phase_series": {
+    "Dissolved oxygen": [
+     {
+      "year": 2023,
+      "festival": "Ganesh",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 6.6,
+        "outcome": "ok"
+       },
+       {
+        "phase": "during",
+        "value": 5.8,
+        "outcome": "ok"
+       },
+       {
+        "phase": "after",
+        "value": 9.5,
+        "outcome": "ok"
+       }
+      ]
+     },
+     {
+      "year": 2023,
+      "festival": "Durga",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 6.2,
+        "outcome": "ok"
+       },
+       {
+        "phase": "during",
+        "value": 6.0,
+        "outcome": "ok"
+       },
+       {
+        "phase": "after",
+        "value": 6.5,
+        "outcome": "ok"
+       }
+      ]
+     },
+     {
+      "year": 2024,
+      "festival": "Ganesh",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 4.8,
+        "outcome": "breach"
+       },
+       {
+        "phase": "during",
+        "value": 4.3,
+        "outcome": "breach"
+       },
+       {
+        "phase": "after",
+        "value": 3.6,
+        "outcome": "breach"
+       }
+      ]
+     },
+     {
+      "year": 2024,
+      "festival": "Durga",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 7.5,
+        "outcome": "ok"
+       },
+       {
+        "phase": "during",
+        "value": 6.4,
+        "outcome": "ok"
+       },
+       {
+        "phase": "after",
+        "value": 6.5,
+        "outcome": "ok"
+       }
+      ]
+     },
+     {
+      "year": 2025,
+      "festival": "Ganesh",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 6.9,
+        "outcome": "ok"
+       },
+       {
+        "phase": "during",
+        "value": 6.9,
+        "outcome": "ok"
+       },
+       {
+        "phase": "after",
+        "value": 6.2,
+        "outcome": "ok"
+       }
+      ]
+     },
+     {
+      "year": 2025,
+      "festival": "Durga",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 2.5,
+        "outcome": "breach"
+       },
+       {
+        "phase": "during",
+        "value": 2.4,
+        "outcome": "breach"
+       },
+       {
+        "phase": "after",
+        "value": 2.6,
+        "outcome": "breach"
+       }
+      ]
+     }
+    ],
+    "BOD": [
+     {
+      "year": 2023,
+      "festival": "Ganesh",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 4.2,
+        "outcome": "breach"
+       },
+       {
+        "phase": "during",
+        "value": 4.4,
+        "outcome": "breach"
+       },
+       {
+        "phase": "after",
+        "value": 9.2,
+        "outcome": "breach"
+       }
+      ]
+     },
+     {
+      "year": 2023,
+      "festival": "Durga",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 8.8,
+        "outcome": "breach"
+       },
+       {
+        "phase": "during",
+        "value": 8.4,
+        "outcome": "breach"
+       },
+       {
+        "phase": "after",
+        "value": 8.6,
+        "outcome": "breach"
+       }
+      ]
+     },
+     {
+      "year": 2024,
+      "festival": "Ganesh",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 4.8,
+        "outcome": "breach"
+       },
+       {
+        "phase": "during",
+        "value": 5.0,
+        "outcome": "breach"
+       },
+       {
+        "phase": "after",
+        "value": 6.4,
+        "outcome": "breach"
+       }
+      ]
+     },
+     {
+      "year": 2024,
+      "festival": "Durga",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 5.6,
+        "outcome": "breach"
+       },
+       {
+        "phase": "during",
+        "value": 5.8,
+        "outcome": "breach"
+       },
+       {
+        "phase": "after",
+        "value": 6.0,
+        "outcome": "breach"
+       }
+      ]
+     },
+     {
+      "year": 2025,
+      "festival": "Ganesh",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 3.8,
+        "outcome": "breach"
+       },
+       {
+        "phase": "during",
+        "value": 6.9,
+        "outcome": "breach"
+       },
+       {
+        "phase": "after",
+        "value": 4.8,
+        "outcome": "breach"
+       }
+      ]
+     },
+     {
+      "year": 2025,
+      "festival": "Durga",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 6.8,
+        "outcome": "breach"
+       },
+       {
+        "phase": "during",
+        "value": 8.8,
+        "outcome": "breach"
+       },
+       {
+        "phase": "after",
+        "value": 4.8,
+        "outcome": "breach"
+       }
+      ]
+     }
+    ],
+    "pH": [
+     {
+      "year": 2023,
+      "festival": "Ganesh",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 7.65,
+        "outcome": "ok"
+       },
+       {
+        "phase": "during",
+        "value": 8.35,
+        "outcome": "ok"
+       },
+       {
+        "phase": "after",
+        "value": 8.07,
+        "outcome": "ok"
+       }
+      ]
+     },
+     {
+      "year": 2023,
+      "festival": "Durga",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 8.07,
+        "outcome": "ok"
+       },
+       {
+        "phase": "during",
+        "value": 7.63,
+        "outcome": "ok"
+       },
+       {
+        "phase": "after",
+        "value": 7.54,
+        "outcome": "ok"
+       }
+      ]
+     },
+     {
+      "year": 2024,
+      "festival": "Ganesh",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 7.35,
+        "outcome": "ok"
+       },
+       {
+        "phase": "during",
+        "value": 7.31,
+        "outcome": "ok"
+       },
+       {
+        "phase": "after",
+        "value": 7.63,
+        "outcome": "ok"
+       }
+      ]
+     },
+     {
+      "year": 2024,
+      "festival": "Durga",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 7.48,
+        "outcome": "ok"
+       },
+       {
+        "phase": "during",
+        "value": 7.7,
+        "outcome": "ok"
+       },
+       {
+        "phase": "after",
+        "value": 7.75,
+        "outcome": "ok"
+       }
+      ]
+     },
+     {
+      "year": 2025,
+      "festival": "Ganesh",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 7.46,
+        "outcome": "ok"
+       },
+       {
+        "phase": "during",
+        "value": 7.7,
+        "outcome": "ok"
+       },
+       {
+        "phase": "after",
+        "value": 7.62,
+        "outcome": "ok"
+       }
+      ]
+     },
+     {
+      "year": 2025,
+      "festival": "Durga",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 7.92,
+        "outcome": "ok"
+       },
+       {
+        "phase": "during",
+        "value": 7.85,
+        "outcome": "ok"
+       },
+       {
+        "phase": "after",
+        "value": 7.38,
+        "outcome": "ok"
+       }
+      ]
+     }
+    ]
+   },
+   "festivals_present": [
+    "Durga",
+    "Ganesh"
+   ],
+   "years_present": [
+    2023,
+    2024,
+    2025
+   ],
+   "rank": 4
+  },
+  {
+   "site": "Hathaikheda dam / kund",
+   "short_name": "Hathaikheda",
+   "water_body": "Hathaikheda dam",
+   "water_bodies": [
+    "Hathaikheda dam"
+   ],
+   "site_ambiguous": false,
+   "site_match_confidence": "high",
+   "names_as_printed": [
+    "Hathaikheda visarjan kund, Bhopal",
+    "Hathaikheda dam (ghat),bhopal",
+    "Hathaikheda dam (ghat), Bhopal",
+    "Hathaikheda Visarjan Kund, Bhopal"
+   ],
+   "severity": 34.0,
+   "severity_components": {
+    "Dissolved oxygen": 0.0,
+    "BOD": 0.757,
+    "pH": 0.109,
+    "worst_value_penalty": 0.39
+   },
+   "tier": {
+    "key": "moderate",
+    "label_en": "Moderate concern",
+    "label_hi": "मध्यम चिंता",
+    "colour": "yellow"
+   },
+   "evidence": {
+    "key": "strong",
+    "label_en": "Strong evidence",
+    "label_hi": "मज़बूत साक्ष्य",
+    "readings": 54,
+    "combos": 18,
+    "expected_combos": 18
+   },
+   "testing_priority": {
+    "score": 1.4,
+    "missing_combos": 0,
+    "missing_readings": 0,
+    "rank": 6
+   },
+   "year_trend": "worsening",
+   "reason_en": "Hathaikheda: DO below 5 mg/l in 0 of 18 readings (lowest 5.1); BOD above 3 mg/l in 16 of 18 (highest 22); pH outside 6.5-8.5 in 3 of 18.",
+   "reason_hi": "Hathaikheda: 18 में से 0 रीडिंग में DO 5 mg/l से कम (न्यूनतम 5.1); 18 में से 16 रीडिंग में BOD 3 mg/l से अधिक (अधिकतम 22); 18 में से 3 रीडिंग में pH 6.5-8.5 से बाहर।",
+   "summary": {
+    "Dissolved oxygen": {
+     "sampled": 18,
+     "breaches": 0,
+     "breach_rate": 0.0,
+     "worst_value": 5.1,
+     "bdl": 0,
+     "missing": 0,
+     "worst_reading": {
+      "year": 2023,
+      "festival": "Ganesh",
+      "phase": "after",
+      "value": 5.1,
+      "unit": "mg/l",
+      "source_page": 27
+     },
+     "by_festival": {
+      "Ganesh": {
+       "sampled": 9,
+       "breaches": 0,
+       "breach_rate": 0.0
+      },
+      "Durga": {
+       "sampled": 9,
+       "breaches": 0,
+       "breach_rate": 0.0
+      }
+     },
+     "by_year": {
+      "2023": {
+       "sampled": 6,
+       "breaches": 0,
+       "breach_rate": 0.0
+      },
+      "2024": {
+       "sampled": 6,
+       "breaches": 0,
+       "breach_rate": 0.0
+      },
+      "2025": {
+       "sampled": 6,
+       "breaches": 0,
+       "breach_rate": 0.0
+      }
+     },
+     "by_phase": {
+      "pre": {
+       "sampled": 6,
+       "breaches": 0,
+       "breach_rate": 0.0
+      },
+      "during": {
+       "sampled": 6,
+       "breaches": 0,
+       "breach_rate": 0.0
+      },
+      "after": {
+       "sampled": 6,
+       "breaches": 0,
+       "breach_rate": 0.0
+      }
+     }
+    },
+    "BOD": {
+     "sampled": 18,
+     "breaches": 16,
+     "breach_rate": 0.8888888888888888,
+     "worst_value": 22.0,
+     "bdl": 0,
+     "missing": 0,
+     "worst_reading": {
+      "year": 2024,
+      "festival": "Ganesh",
+      "phase": "after",
+      "value": 22.0,
+      "unit": "mg/l",
+      "source_page": 71
+     },
+     "by_festival": {
+      "Ganesh": {
+       "sampled": 9,
+       "breaches": 8,
+       "breach_rate": 0.8888888888888888
+      },
+      "Durga": {
+       "sampled": 9,
+       "breaches": 8,
+       "breach_rate": 0.8888888888888888
+      }
+     },
+     "by_year": {
+      "2023": {
+       "sampled": 6,
+       "breaches": 4,
+       "breach_rate": 0.6666666666666666
+      },
+      "2024": {
+       "sampled": 6,
+       "breaches": 6,
+       "breach_rate": 1.0
+      },
+      "2025": {
+       "sampled": 6,
+       "breaches": 6,
+       "breach_rate": 1.0
+      }
+     },
+     "by_phase": {
+      "pre": {
+       "sampled": 6,
+       "breaches": 5,
+       "breach_rate": 0.8333333333333334
+      },
+      "during": {
+       "sampled": 6,
+       "breaches": 6,
+       "breach_rate": 1.0
+      },
+      "after": {
+       "sampled": 6,
+       "breaches": 5,
+       "breach_rate": 0.8333333333333334
+      }
+     }
+    },
+    "pH": {
+     "sampled": 18,
+     "breaches": 3,
+     "breach_rate": 0.16666666666666666,
+     "worst_value": 9.2,
+     "bdl": 0,
+     "missing": 0,
+     "worst_reading": {
+      "year": 2024,
+      "festival": "Durga",
+      "phase": "pre",
+      "value": 9.2,
+      "unit": "",
+      "source_page": 23
+     },
+     "by_festival": {
+      "Ganesh": {
+       "sampled": 9,
+       "breaches": 2,
+       "breach_rate": 0.2222222222222222
+      },
+      "Durga": {
+       "sampled": 9,
+       "breaches": 1,
+       "breach_rate": 0.1111111111111111
+      }
+     },
+     "by_year": {
+      "2023": {
+       "sampled": 6,
+       "breaches": 1,
+       "breach_rate": 0.16666666666666666
+      },
+      "2024": {
+       "sampled": 6,
+       "breaches": 1,
+       "breach_rate": 0.16666666666666666
+      },
+      "2025": {
+       "sampled": 6,
+       "breaches": 1,
+       "breach_rate": 0.16666666666666666
+      }
+     },
+     "by_phase": {
+      "pre": {
+       "sampled": 6,
+       "breaches": 1,
+       "breach_rate": 0.16666666666666666
+      },
+      "during": {
+       "sampled": 6,
+       "breaches": 2,
+       "breach_rate": 0.3333333333333333
+      },
+      "after": {
+       "sampled": 6,
+       "breaches": 0,
+       "breach_rate": 0.0
+      }
+     }
+    }
+   },
+   "coverage": {
+    "covered": 18,
+    "expected": 18,
+    "gaps": [],
+    "combos": [
+     {
+      "year": 2023,
+      "festival": "Ganesh",
+      "phase": "pre",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2023,
+      "festival": "Ganesh",
+      "phase": "during",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2023,
+      "festival": "Ganesh",
+      "phase": "after",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2023,
+      "festival": "Durga",
+      "phase": "pre",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2023,
+      "festival": "Durga",
+      "phase": "during",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2023,
+      "festival": "Durga",
+      "phase": "after",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2024,
+      "festival": "Ganesh",
+      "phase": "pre",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2024,
+      "festival": "Ganesh",
+      "phase": "during",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2024,
+      "festival": "Ganesh",
+      "phase": "after",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2024,
+      "festival": "Durga",
+      "phase": "pre",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2024,
+      "festival": "Durga",
+      "phase": "during",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2024,
+      "festival": "Durga",
+      "phase": "after",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2025,
+      "festival": "Ganesh",
+      "phase": "pre",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2025,
+      "festival": "Ganesh",
+      "phase": "during",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2025,
+      "festival": "Ganesh",
+      "phase": "after",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2025,
+      "festival": "Durga",
+      "phase": "pre",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2025,
+      "festival": "Durga",
+      "phase": "during",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2025,
+      "festival": "Durga",
+      "phase": "after",
+      "assessed_readings": 3,
+      "status": "covered"
+     }
+    ]
+   },
+   "parameter_gaps": [],
+   "phase_series": {
+    "Dissolved oxygen": [
+     {
+      "year": 2023,
+      "festival": "Ganesh",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 7.9,
+        "outcome": "ok"
+       },
+       {
+        "phase": "during",
+        "value": 6.5,
+        "outcome": "ok"
+       },
+       {
+        "phase": "after",
+        "value": 5.1,
+        "outcome": "ok"
+       }
+      ]
+     },
+     {
+      "year": 2023,
+      "festival": "Durga",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 6.5,
+        "outcome": "ok"
+       },
+       {
+        "phase": "during",
+        "value": 10.2,
+        "outcome": "ok"
+       },
+       {
+        "phase": "after",
+        "value": 8.6,
+        "outcome": "ok"
+       }
+      ]
+     },
+     {
+      "year": 2024,
+      "festival": "Ganesh",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 9.0,
+        "outcome": "ok"
+       },
+       {
+        "phase": "during",
+        "value": 5.3,
+        "outcome": "ok"
+       },
+       {
+        "phase": "after",
+        "value": 11.0,
+        "outcome": "ok"
+       }
+      ]
+     },
+     {
+      "year": 2024,
+      "festival": "Durga",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 8.6,
+        "outcome": "ok"
+       },
+       {
+        "phase": "during",
+        "value": 5.9,
+        "outcome": "ok"
+       },
+       {
+        "phase": "after",
+        "value": 5.7,
+        "outcome": "ok"
+       }
+      ]
+     },
+     {
+      "year": 2025,
+      "festival": "Ganesh",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 5.6,
+        "outcome": "ok"
+       },
+       {
+        "phase": "during",
+        "value": 7.0,
+        "outcome": "ok"
+       },
+       {
+        "phase": "after",
+        "value": 6.4,
+        "outcome": "ok"
+       }
+      ]
+     },
+     {
+      "year": 2025,
+      "festival": "Durga",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 8.5,
+        "outcome": "ok"
+       },
+       {
+        "phase": "during",
+        "value": 8.5,
+        "outcome": "ok"
+       },
+       {
+        "phase": "after",
+        "value": 10.8,
+        "outcome": "ok"
+       }
+      ]
+     }
+    ],
+    "BOD": [
+     {
+      "year": 2023,
+      "festival": "Ganesh",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 2.5,
+        "outcome": "ok"
+       },
+       {
+        "phase": "during",
+        "value": 6.0,
+        "outcome": "breach"
+       },
+       {
+        "phase": "after",
+        "value": 10.8,
+        "outcome": "breach"
+       }
+      ]
+     },
+     {
+      "year": 2023,
+      "festival": "Durga",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 4.0,
+        "outcome": "breach"
+       },
+       {
+        "phase": "during",
+        "value": 8.8,
+        "outcome": "breach"
+       },
+       {
+        "phase": "after",
+        "value": 2.4,
+        "outcome": "ok"
+       }
+      ]
+     },
+     {
+      "year": 2024,
+      "festival": "Ganesh",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 7.2,
+        "outcome": "breach"
+       },
+       {
+        "phase": "during",
+        "value": 13.2,
+        "outcome": "breach"
+       },
+       {
+        "phase": "after",
+        "value": 22.0,
+        "outcome": "breach"
+       }
+      ]
+     },
+     {
+      "year": 2024,
+      "festival": "Durga",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 7.4,
+        "outcome": "breach"
+       },
+       {
+        "phase": "during",
+        "value": 4.4,
+        "outcome": "breach"
+       },
+       {
+        "phase": "after",
+        "value": 4.6,
+        "outcome": "breach"
+       }
+      ]
+     },
+     {
+      "year": 2025,
+      "festival": "Ganesh",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 5.2,
+        "outcome": "breach"
+       },
+       {
+        "phase": "during",
+        "value": 10.0,
+        "outcome": "breach"
+       },
+       {
+        "phase": "after",
+        "value": 5.2,
+        "outcome": "breach"
+       }
+      ]
+     },
+     {
+      "year": 2025,
+      "festival": "Durga",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 6.8,
+        "outcome": "breach"
+       },
+       {
+        "phase": "during",
+        "value": 8.0,
+        "outcome": "breach"
+       },
+       {
+        "phase": "after",
+        "value": 6.4,
+        "outcome": "breach"
+       }
+      ]
+     }
+    ],
+    "pH": [
+     {
+      "year": 2023,
+      "festival": "Ganesh",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 8.1,
+        "outcome": "ok"
+       },
+       {
+        "phase": "during",
+        "value": 8.92,
+        "outcome": "breach"
+       },
+       {
+        "phase": "after",
+        "value": 8.01,
+        "outcome": "ok"
+       }
+      ]
+     },
+     {
+      "year": 2023,
+      "festival": "Durga",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 8.02,
+        "outcome": "ok"
+       },
+       {
+        "phase": "during",
+        "value": 8.02,
+        "outcome": "ok"
+       },
+       {
+        "phase": "after",
+        "value": 8.15,
+        "outcome": "ok"
+       }
+      ]
+     },
+     {
+      "year": 2024,
+      "festival": "Ganesh",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 7.93,
+        "outcome": "ok"
+       },
+       {
+        "phase": "during",
+        "value": 7.29,
+        "outcome": "ok"
+       },
+       {
+        "phase": "after",
+        "value": 7.38,
+        "outcome": "ok"
+       }
+      ]
+     },
+     {
+      "year": 2024,
+      "festival": "Durga",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 9.2,
+        "outcome": "breach"
+       },
+       {
+        "phase": "during",
+        "value": 7.7,
+        "outcome": "ok"
+       },
+       {
+        "phase": "after",
+        "value": 7.7,
+        "outcome": "ok"
+       }
+      ]
+     },
+     {
+      "year": 2025,
+      "festival": "Ganesh",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 8.23,
+        "outcome": "ok"
+       },
+       {
+        "phase": "during",
+        "value": 8.71,
+        "outcome": "breach"
+       },
+       {
+        "phase": "after",
+        "value": 8.44,
+        "outcome": "ok"
+       }
+      ]
+     },
+     {
+      "year": 2025,
+      "festival": "Durga",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 8.14,
+        "outcome": "ok"
+       },
+       {
+        "phase": "during",
+        "value": 8.37,
+        "outcome": "ok"
+       },
+       {
+        "phase": "after",
+        "value": 8.44,
+        "outcome": "ok"
+       }
+      ]
+     }
+    ]
+   },
+   "festivals_present": [
+    "Durga",
+    "Ganesh"
+   ],
+   "years_present": [
+    2023,
+    2024,
+    2025
+   ],
+   "rank": 5
+  },
+  {
+   "site": "Khatlapura ghat",
+   "short_name": "Khatlapura",
+   "water_body": "Lower Lake",
+   "water_bodies": [
+    "Lower Lake"
+   ],
+   "site_ambiguous": false,
+   "site_match_confidence": "high",
+   "names_as_printed": [
+    "Khatlapura Visarjanghat, Bhopal",
+    "Khatlapura visarjan ghat (Lower lake),Bhopal",
+    "Khatlapura Visarjan Ghat (Lower lake), Bhopal",
+    "Khatlapura murti visarjan ghat at lower lake, Bhopal",
+    "Khatlapura visarjan ghat (Lower lake), Bhopal"
+   ],
+   "severity": 33.9,
+   "severity_components": {
+    "Dissolved oxygen": 0.289,
+    "BOD": 0.6,
+    "pH": 0.019,
+    "worst_value_penalty": 0.17
+   },
+   "tier": {
+    "key": "moderate",
+    "label_en": "Moderate concern",
+    "label_hi": "मध्यम चिंता",
+    "colour": "yellow"
+   },
+   "evidence": {
+    "key": "strong",
+    "label_en": "Strong evidence",
+    "label_hi": "मज़बूत साक्ष्य",
+    "readings": 53,
+    "combos": 18,
+    "expected_combos": 18
+   },
+   "testing_priority": {
+    "score": 2.4,
+    "missing_combos": 0,
+    "missing_readings": 1,
+    "rank": 4
+   },
+   "year_trend": "stable",
+   "reason_en": "Khatlapura: DO below 5 mg/l in 8 of 18 readings (lowest 4); BOD above 3 mg/l in 15 of 17 (highest 11.2); pH outside 6.5-8.5 in 1 of 18.",
+   "reason_hi": "Khatlapura: 18 में से 8 रीडिंग में DO 5 mg/l से कम (न्यूनतम 4); 17 में से 15 रीडिंग में BOD 3 mg/l से अधिक (अधिकतम 11.2); 18 में से 1 रीडिंग में pH 6.5-8.5 से बाहर।",
+   "summary": {
+    "Dissolved oxygen": {
+     "sampled": 18,
+     "breaches": 8,
+     "breach_rate": 0.4444444444444444,
+     "worst_value": 4.0,
+     "bdl": 0,
+     "missing": 0,
+     "worst_reading": {
+      "year": 2024,
+      "festival": "Ganesh",
+      "phase": "during",
+      "value": 4.0,
+      "unit": "mg/l",
+      "source_page": 69
+     },
+     "by_festival": {
+      "Ganesh": {
+       "sampled": 9,
+       "breaches": 3,
+       "breach_rate": 0.3333333333333333
+      },
+      "Durga": {
+       "sampled": 9,
+       "breaches": 5,
+       "breach_rate": 0.5555555555555556
+      }
+     },
+     "by_year": {
+      "2023": {
+       "sampled": 6,
+       "breaches": 3,
+       "breach_rate": 0.5
+      },
+      "2024": {
+       "sampled": 6,
+       "breaches": 5,
+       "breach_rate": 0.8333333333333334
+      },
+      "2025": {
+       "sampled": 6,
+       "breaches": 0,
+       "breach_rate": 0.0
+      }
+     },
+     "by_phase": {
+      "pre": {
+       "sampled": 6,
+       "breaches": 2,
+       "breach_rate": 0.3333333333333333
+      },
+      "during": {
+       "sampled": 6,
+       "breaches": 3,
+       "breach_rate": 0.5
+      },
+      "after": {
+       "sampled": 6,
+       "breaches": 3,
+       "breach_rate": 0.5
+      }
+     }
+    },
+    "BOD": {
+     "sampled": 17,
+     "breaches": 15,
+     "breach_rate": 0.8823529411764706,
+     "worst_value": 11.2,
+     "bdl": 0,
+     "missing": 1,
+     "worst_reading": {
+      "year": 2023,
+      "festival": "Ganesh",
+      "phase": "after",
+      "value": 11.2,
+      "unit": "mg/l",
+      "source_page": 26
+     },
+     "by_festival": {
+      "Ganesh": {
+       "sampled": 9,
+       "breaches": 7,
+       "breach_rate": 0.7777777777777778
+      },
+      "Durga": {
+       "sampled": 8,
+       "breaches": 8,
+       "breach_rate": 1.0
+      }
+     },
+     "by_year": {
+      "2023": {
+       "sampled": 5,
+       "breaches": 3,
+       "breach_rate": 0.6
+      },
+      "2024": {
+       "sampled": 6,
+       "breaches": 6,
+       "breach_rate": 1.0
+      },
+      "2025": {
+       "sampled": 6,
+       "breaches": 6,
+       "breach_rate": 1.0
+      }
+     },
+     "by_phase": {
+      "pre": {
+       "sampled": 6,
+       "breaches": 5,
+       "breach_rate": 0.8333333333333334
+      },
+      "during": {
+       "sampled": 5,
+       "breaches": 4,
+       "breach_rate": 0.8
+      },
+      "after": {
+       "sampled": 6,
+       "breaches": 6,
+       "breach_rate": 1.0
+      }
+     }
+    },
+    "pH": {
+     "sampled": 18,
+     "breaches": 1,
+     "breach_rate": 0.05555555555555555,
+     "worst_value": 6.49,
+     "bdl": 0,
+     "missing": 0,
+     "worst_reading": {
+      "year": 2024,
+      "festival": "Ganesh",
+      "phase": "during",
+      "value": 6.49,
+      "unit": "",
+      "source_page": 69
+     },
+     "by_festival": {
+      "Ganesh": {
+       "sampled": 9,
+       "breaches": 1,
+       "breach_rate": 0.1111111111111111
+      },
+      "Durga": {
+       "sampled": 9,
+       "breaches": 0,
+       "breach_rate": 0.0
+      }
+     },
+     "by_year": {
+      "2023": {
+       "sampled": 6,
+       "breaches": 0,
+       "breach_rate": 0.0
+      },
+      "2024": {
+       "sampled": 6,
+       "breaches": 1,
+       "breach_rate": 0.16666666666666666
+      },
+      "2025": {
+       "sampled": 6,
+       "breaches": 0,
+       "breach_rate": 0.0
+      }
+     },
+     "by_phase": {
+      "pre": {
+       "sampled": 6,
+       "breaches": 0,
+       "breach_rate": 0.0
+      },
+      "during": {
+       "sampled": 6,
+       "breaches": 1,
+       "breach_rate": 0.16666666666666666
+      },
+      "after": {
+       "sampled": 6,
+       "breaches": 0,
+       "breach_rate": 0.0
+      }
+     }
+    }
+   },
+   "coverage": {
+    "covered": 18,
+    "expected": 18,
+    "gaps": [],
+    "combos": [
+     {
+      "year": 2023,
+      "festival": "Ganesh",
+      "phase": "pre",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2023,
+      "festival": "Ganesh",
+      "phase": "during",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2023,
+      "festival": "Ganesh",
+      "phase": "after",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2023,
+      "festival": "Durga",
+      "phase": "pre",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2023,
+      "festival": "Durga",
+      "phase": "during",
+      "assessed_readings": 2,
+      "status": "covered"
+     },
+     {
+      "year": 2023,
+      "festival": "Durga",
+      "phase": "after",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2024,
+      "festival": "Ganesh",
+      "phase": "pre",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2024,
+      "festival": "Ganesh",
+      "phase": "during",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2024,
+      "festival": "Ganesh",
+      "phase": "after",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2024,
+      "festival": "Durga",
+      "phase": "pre",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2024,
+      "festival": "Durga",
+      "phase": "during",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2024,
+      "festival": "Durga",
+      "phase": "after",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2025,
+      "festival": "Ganesh",
+      "phase": "pre",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2025,
+      "festival": "Ganesh",
+      "phase": "during",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2025,
+      "festival": "Ganesh",
+      "phase": "after",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2025,
+      "festival": "Durga",
+      "phase": "pre",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2025,
+      "festival": "Durga",
+      "phase": "during",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2025,
+      "festival": "Durga",
+      "phase": "after",
+      "assessed_readings": 3,
+      "status": "covered"
+     }
+    ]
+   },
+   "parameter_gaps": [
+    {
+     "parameter": "BOD",
+     "rows": 18,
+     "numeric": 17,
+     "bdl": 0,
+     "missing": 1,
+     "note": "1 missing / not sampled"
+    },
+    {
+     "parameter": "Chromium",
+     "rows": 18,
+     "numeric": 8,
+     "bdl": 9,
+     "missing": 1,
+     "note": "1 missing / not sampled"
+    },
+    {
+     "parameter": "Lead",
+     "rows": 18,
+     "numeric": 9,
+     "bdl": 8,
+     "missing": 1,
+     "note": "1 missing / not sampled"
+    },
+    {
+     "parameter": "Zinc",
+     "rows": 18,
+     "numeric": 14,
+     "bdl": 3,
+     "missing": 1,
+     "note": "1 missing / not sampled"
+    },
+    {
+     "parameter": "Copper",
+     "rows": 18,
+     "numeric": 10,
+     "bdl": 7,
+     "missing": 1,
+     "note": "1 missing / not sampled"
+    }
+   ],
+   "phase_series": {
+    "Dissolved oxygen": [
+     {
+      "year": 2023,
+      "festival": "Ganesh",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 6.4,
+        "outcome": "ok"
+       },
+       {
+        "phase": "during",
+        "value": 6.1,
+        "outcome": "ok"
+       },
+       {
+        "phase": "after",
+        "value": 7.8,
+        "outcome": "ok"
+       }
+      ]
+     },
+     {
+      "year": 2023,
+      "festival": "Durga",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 4.5,
+        "outcome": "breach"
+       },
+       {
+        "phase": "during",
+        "value": 4.2,
+        "outcome": "breach"
+       },
+       {
+        "phase": "after",
+        "value": 4.4,
+        "outcome": "breach"
+       }
+      ]
+     },
+     {
+      "year": 2024,
+      "festival": "Ganesh",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 4.3,
+        "outcome": "breach"
+       },
+       {
+        "phase": "during",
+        "value": 4.0,
+        "outcome": "breach"
+       },
+       {
+        "phase": "after",
+        "value": 4.6,
+        "outcome": "breach"
+       }
+      ]
+     },
+     {
+      "year": 2024,
+      "festival": "Durga",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 6.6,
+        "outcome": "ok"
+       },
+       {
+        "phase": "during",
+        "value": 4.5,
+        "outcome": "breach"
+       },
+       {
+        "phase": "after",
+        "value": 4.4,
+        "outcome": "breach"
+       }
+      ]
+     },
+     {
+      "year": 2025,
+      "festival": "Ganesh",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 7.3,
+        "outcome": "ok"
+       },
+       {
+        "phase": "during",
+        "value": 6.0,
+        "outcome": "ok"
+       },
+       {
+        "phase": "after",
+        "value": 6.5,
+        "outcome": "ok"
+       }
+      ]
+     },
+     {
+      "year": 2025,
+      "festival": "Durga",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 7.1,
+        "outcome": "ok"
+       },
+       {
+        "phase": "during",
+        "value": 6.2,
+        "outcome": "ok"
+       },
+       {
+        "phase": "after",
+        "value": 6.6,
+        "outcome": "ok"
+       }
+      ]
+     }
+    ],
+    "BOD": [
+     {
+      "year": 2023,
+      "festival": "Ganesh",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 2.4,
+        "outcome": "ok"
+       },
+       {
+        "phase": "during",
+        "value": 2.8,
+        "outcome": "ok"
+       },
+       {
+        "phase": "after",
+        "value": 11.2,
+        "outcome": "breach"
+       }
+      ]
+     },
+     {
+      "year": 2023,
+      "festival": "Durga",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 6.4,
+        "outcome": "breach"
+       },
+       {
+        "phase": "during",
+        "value": null,
+        "outcome": "missing"
+       },
+       {
+        "phase": "after",
+        "value": 7.8,
+        "outcome": "breach"
+       }
+      ]
+     },
+     {
+      "year": 2024,
+      "festival": "Ganesh",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 6.8,
+        "outcome": "breach"
+       },
+       {
+        "phase": "during",
+        "value": 7.2,
+        "outcome": "breach"
+       },
+       {
+        "phase": "after",
+        "value": 6.2,
+        "outcome": "breach"
+       }
+      ]
+     },
+     {
+      "year": 2024,
+      "festival": "Durga",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 7.8,
+        "outcome": "breach"
+       },
+       {
+        "phase": "during",
+        "value": 8.0,
+        "outcome": "breach"
+       },
+       {
+        "phase": "after",
+        "value": 8.4,
+        "outcome": "breach"
+       }
+      ]
+     },
+     {
+      "year": 2025,
+      "festival": "Ganesh",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 4.4,
+        "outcome": "breach"
+       },
+       {
+        "phase": "during",
+        "value": 5.4,
+        "outcome": "breach"
+       },
+       {
+        "phase": "after",
+        "value": 5.2,
+        "outcome": "breach"
+       }
+      ]
+     },
+     {
+      "year": 2025,
+      "festival": "Durga",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 4.4,
+        "outcome": "breach"
+       },
+       {
+        "phase": "during",
+        "value": 4.6,
+        "outcome": "breach"
+       },
+       {
+        "phase": "after",
+        "value": 3.1,
+        "outcome": "breach"
+       }
+      ]
+     }
+    ],
+    "pH": [
+     {
+      "year": 2023,
+      "festival": "Ganesh",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 6.98,
+        "outcome": "ok"
+       },
+       {
+        "phase": "during",
+        "value": 7.63,
+        "outcome": "ok"
+       },
+       {
+        "phase": "after",
+        "value": 8.08,
+        "outcome": "ok"
+       }
+      ]
+     },
+     {
+      "year": 2023,
+      "festival": "Durga",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 7.87,
+        "outcome": "ok"
+       },
+       {
+        "phase": "during",
+        "value": 8.2,
+        "outcome": "ok"
+       },
+       {
+        "phase": "after",
+        "value": 7.46,
+        "outcome": "ok"
+       }
+      ]
+     },
+     {
+      "year": 2024,
+      "festival": "Ganesh",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 8.07,
+        "outcome": "ok"
+       },
+       {
+        "phase": "during",
+        "value": 6.49,
+        "outcome": "breach"
+       },
+       {
+        "phase": "after",
+        "value": 7.95,
+        "outcome": "ok"
+       }
+      ]
+     },
+     {
+      "year": 2024,
+      "festival": "Durga",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 8.0,
+        "outcome": "ok"
+       },
+       {
+        "phase": "during",
+        "value": 7.57,
+        "outcome": "ok"
+       },
+       {
+        "phase": "after",
+        "value": 7.4,
+        "outcome": "ok"
+       }
+      ]
+     },
+     {
+      "year": 2025,
+      "festival": "Ganesh",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 7.34,
+        "outcome": "ok"
+       },
+       {
+        "phase": "during",
+        "value": 8.0,
+        "outcome": "ok"
+       },
+       {
+        "phase": "after",
+        "value": 7.76,
+        "outcome": "ok"
+       }
+      ]
+     },
+     {
+      "year": 2025,
+      "festival": "Durga",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 8.17,
+        "outcome": "ok"
+       },
+       {
+        "phase": "during",
+        "value": 7.72,
+        "outcome": "ok"
+       },
+       {
+        "phase": "after",
+        "value": 7.81,
+        "outcome": "ok"
+       }
+      ]
+     }
+    ]
+   },
+   "festivals_present": [
+    "Durga",
+    "Ganesh"
+   ],
+   "years_present": [
+    2023,
+    2024,
+    2025
+   ],
+   "rank": 6
+  },
+  {
+   "site": "Prempura ghat",
+   "short_name": "Prempura",
+   "water_body": "Upper Lake",
+   "water_bodies": [
+    "Upper Lake"
+   ],
+   "site_ambiguous": false,
+   "site_match_confidence": "high",
+   "names_as_printed": [
+    "Prempura Visarjanghat, Bhopal",
+    "Prempura ghat, Bhopal"
+   ],
+   "severity": 18.1,
+   "severity_components": {
+    "Dissolved oxygen": 0.09,
+    "BOD": 0.353,
+    "pH": 0.041,
+    "worst_value_penalty": 0.131
+   },
+   "tier": {
+    "key": "lower",
+    "label_en": "Lower concern (based on available data)",
+    "label_hi": "कम चिंता (उपलब्ध डेटा के आधार पर)",
+    "colour": "green"
+   },
+   "evidence": {
+    "key": "strong",
+    "label_en": "Strong evidence",
+    "label_hi": "मज़बूत साक्ष्य",
+    "readings": 50,
+    "combos": 18,
+    "expected_combos": 18
+   },
+   "testing_priority": {
+    "score": 4.7,
+    "missing_combos": 0,
+    "missing_readings": 4,
+    "rank": 3
+   },
+   "year_trend": "worsening",
+   "reason_en": "Prempura: DO below 5 mg/l in 3 of 18 readings (lowest 3.9); BOD above 3 mg/l in 9 of 15 (highest 6.8); pH outside 6.5-8.5 in 2 of 17.",
+   "reason_hi": "Prempura: 18 में से 3 रीडिंग में DO 5 mg/l से कम (न्यूनतम 3.9); 15 में से 9 रीडिंग में BOD 3 mg/l से अधिक (अधिकतम 6.8); 17 में से 2 रीडिंग में pH 6.5-8.5 से बाहर।",
+   "summary": {
+    "Dissolved oxygen": {
+     "sampled": 18,
+     "breaches": 3,
+     "breach_rate": 0.16666666666666666,
+     "worst_value": 3.9,
+     "bdl": 0,
+     "missing": 0,
+     "worst_reading": {
+      "year": 2024,
+      "festival": "Ganesh",
+      "phase": "during",
+      "value": 3.9,
+      "unit": "mg/l",
+      "source_page": 70
+     },
+     "by_festival": {
+      "Ganesh": {
+       "sampled": 9,
+       "breaches": 2,
+       "breach_rate": 0.2222222222222222
+      },
+      "Durga": {
+       "sampled": 9,
+       "breaches": 1,
+       "breach_rate": 0.1111111111111111
+      }
+     },
+     "by_year": {
+      "2023": {
+       "sampled": 6,
+       "breaches": 0,
+       "breach_rate": 0.0
+      },
+      "2024": {
+       "sampled": 6,
+       "breaches": 2,
+       "breach_rate": 0.3333333333333333
+      },
+      "2025": {
+       "sampled": 6,
+       "breaches": 1,
+       "breach_rate": 0.16666666666666666
+      }
+     },
+     "by_phase": {
+      "pre": {
+       "sampled": 6,
+       "breaches": 1,
+       "breach_rate": 0.16666666666666666
+      },
+      "during": {
+       "sampled": 6,
+       "breaches": 2,
+       "breach_rate": 0.3333333333333333
+      },
+      "after": {
+       "sampled": 6,
+       "breaches": 0,
+       "breach_rate": 0.0
+      }
+     }
+    },
+    "BOD": {
+     "sampled": 15,
+     "breaches": 9,
+     "breach_rate": 0.6,
+     "worst_value": 6.8,
+     "bdl": 0,
+     "missing": 3,
+     "worst_reading": {
+      "year": 2024,
+      "festival": "Ganesh",
+      "phase": "during",
+      "value": 6.8,
+      "unit": "mg/l",
+      "source_page": 70
+     },
+     "by_festival": {
+      "Ganesh": {
+       "sampled": 9,
+       "breaches": 5,
+       "breach_rate": 0.5555555555555556
+      },
+      "Durga": {
+       "sampled": 6,
+       "breaches": 4,
+       "breach_rate": 0.6666666666666666
+      }
+     },
+     "by_year": {
+      "2023": {
+       "sampled": 3,
+       "breaches": 0,
+       "breach_rate": 0.0
+      },
+      "2024": {
+       "sampled": 6,
+       "breaches": 4,
+       "breach_rate": 0.6666666666666666
+      },
+      "2025": {
+       "sampled": 6,
+       "breaches": 5,
+       "breach_rate": 0.8333333333333334
+      }
+     },
+     "by_phase": {
+      "pre": {
+       "sampled": 5,
+       "breaches": 3,
+       "breach_rate": 0.6
+      },
+      "during": {
+       "sampled": 5,
+       "breaches": 3,
+       "breach_rate": 0.6
+      },
+      "after": {
+       "sampled": 5,
+       "breaches": 3,
+       "breach_rate": 0.6
+      }
+     }
+    },
+    "pH": {
+     "sampled": 17,
+     "breaches": 2,
+     "breach_rate": 0.11764705882352941,
+     "worst_value": 8.55,
+     "bdl": 0,
+     "missing": 1,
+     "worst_reading": {
+      "year": 2024,
+      "festival": "Ganesh",
+      "phase": "during",
+      "value": 8.55,
+      "unit": "",
+      "source_page": 70
+     },
+     "by_festival": {
+      "Ganesh": {
+       "sampled": 9,
+       "breaches": 2,
+       "breach_rate": 0.2222222222222222
+      },
+      "Durga": {
+       "sampled": 8,
+       "breaches": 0,
+       "breach_rate": 0.0
+      }
+     },
+     "by_year": {
+      "2023": {
+       "sampled": 5,
+       "breaches": 1,
+       "breach_rate": 0.2
+      },
+      "2024": {
+       "sampled": 6,
+       "breaches": 1,
+       "breach_rate": 0.16666666666666666
+      },
+      "2025": {
+       "sampled": 6,
+       "breaches": 0,
+       "breach_rate": 0.0
+      }
+     },
+     "by_phase": {
+      "pre": {
+       "sampled": 6,
+       "breaches": 0,
+       "breach_rate": 0.0
+      },
+      "during": {
+       "sampled": 5,
+       "breaches": 2,
+       "breach_rate": 0.4
+      },
+      "after": {
+       "sampled": 6,
+       "breaches": 0,
+       "breach_rate": 0.0
+      }
+     }
+    }
+   },
+   "coverage": {
+    "covered": 18,
+    "expected": 18,
+    "gaps": [],
+    "combos": [
+     {
+      "year": 2023,
+      "festival": "Ganesh",
+      "phase": "pre",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2023,
+      "festival": "Ganesh",
+      "phase": "during",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2023,
+      "festival": "Ganesh",
+      "phase": "after",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2023,
+      "festival": "Durga",
+      "phase": "pre",
+      "assessed_readings": 2,
+      "status": "covered"
+     },
+     {
+      "year": 2023,
+      "festival": "Durga",
+      "phase": "during",
+      "assessed_readings": 1,
+      "status": "covered"
+     },
+     {
+      "year": 2023,
+      "festival": "Durga",
+      "phase": "after",
+      "assessed_readings": 2,
+      "status": "covered"
+     },
+     {
+      "year": 2024,
+      "festival": "Ganesh",
+      "phase": "pre",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2024,
+      "festival": "Ganesh",
+      "phase": "during",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2024,
+      "festival": "Ganesh",
+      "phase": "after",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2024,
+      "festival": "Durga",
+      "phase": "pre",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2024,
+      "festival": "Durga",
+      "phase": "during",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2024,
+      "festival": "Durga",
+      "phase": "after",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2025,
+      "festival": "Ganesh",
+      "phase": "pre",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2025,
+      "festival": "Ganesh",
+      "phase": "during",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2025,
+      "festival": "Ganesh",
+      "phase": "after",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2025,
+      "festival": "Durga",
+      "phase": "pre",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2025,
+      "festival": "Durga",
+      "phase": "during",
+      "assessed_readings": 3,
+      "status": "covered"
+     },
+     {
+      "year": 2025,
+      "festival": "Durga",
+      "phase": "after",
+      "assessed_readings": 3,
+      "status": "covered"
+     }
+    ]
+   },
+   "parameter_gaps": [
+    {
+     "parameter": "pH",
+     "rows": 18,
+     "numeric": 17,
+     "bdl": 0,
+     "missing": 1,
+     "note": "1 missing / not sampled"
+    },
+    {
+     "parameter": "BOD",
+     "rows": 18,
+     "numeric": 15,
+     "bdl": 0,
+     "missing": 3,
+     "note": "3 missing / not sampled"
+    }
+   ],
+   "phase_series": {
+    "Dissolved oxygen": [
+     {
+      "year": 2023,
+      "festival": "Ganesh",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 6.2,
+        "outcome": "ok"
+       },
+       {
+        "phase": "during",
+        "value": 6.7,
+        "outcome": "ok"
+       },
+       {
+        "phase": "after",
+        "value": 6.5,
+        "outcome": "ok"
+       }
+      ]
+     },
+     {
+      "year": 2023,
+      "festival": "Durga",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 5.4,
+        "outcome": "ok"
+       },
+       {
+        "phase": "during",
+        "value": 5.0,
+        "outcome": "ok"
+       },
+       {
+        "phase": "after",
+        "value": 5.7,
+        "outcome": "ok"
+       }
+      ]
+     },
+     {
+      "year": 2024,
+      "festival": "Ganesh",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 4.3,
+        "outcome": "breach"
+       },
+       {
+        "phase": "during",
+        "value": 3.9,
+        "outcome": "breach"
+       },
+       {
+        "phase": "after",
+        "value": 6.3,
+        "outcome": "ok"
+       }
+      ]
+     },
+     {
+      "year": 2024,
+      "festival": "Durga",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 7.6,
+        "outcome": "ok"
+       },
+       {
+        "phase": "during",
+        "value": 6.4,
+        "outcome": "ok"
+       },
+       {
+        "phase": "after",
+        "value": 7.6,
+        "outcome": "ok"
+       }
+      ]
+     },
+     {
+      "year": 2025,
+      "festival": "Ganesh",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 6.5,
+        "outcome": "ok"
+       },
+       {
+        "phase": "during",
+        "value": 5.6,
+        "outcome": "ok"
+       },
+       {
+        "phase": "after",
+        "value": 6.0,
+        "outcome": "ok"
+       }
+      ]
+     },
+     {
+      "year": 2025,
+      "festival": "Durga",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 6.6,
+        "outcome": "ok"
+       },
+       {
+        "phase": "during",
+        "value": 4.9,
+        "outcome": "breach"
+       },
+       {
+        "phase": "after",
+        "value": 8.2,
+        "outcome": "ok"
+       }
+      ]
+     }
+    ],
+    "BOD": [
+     {
+      "year": 2023,
+      "festival": "Ganesh",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 1.3,
+        "outcome": "ok"
+       },
+       {
+        "phase": "during",
+        "value": 1.5,
+        "outcome": "ok"
+       },
+       {
+        "phase": "after",
+        "value": 2.0,
+        "outcome": "ok"
+       }
+      ]
+     },
+     {
+      "year": 2023,
+      "festival": "Durga",
+      "points": [
+       {
+        "phase": "pre",
+        "value": null,
+        "outcome": "missing"
+       },
+       {
+        "phase": "during",
+        "value": null,
+        "outcome": "missing"
+       },
+       {
+        "phase": "after",
+        "value": null,
+        "outcome": "missing"
+       }
+      ]
+     },
+     {
+      "year": 2024,
+      "festival": "Ganesh",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 3.2,
+        "outcome": "breach"
+       },
+       {
+        "phase": "during",
+        "value": 6.8,
+        "outcome": "breach"
+       },
+       {
+        "phase": "after",
+        "value": 5.2,
+        "outcome": "breach"
+       }
+      ]
+     },
+     {
+      "year": 2024,
+      "festival": "Durga",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 2.4,
+        "outcome": "ok"
+       },
+       {
+        "phase": "during",
+        "value": 2.6,
+        "outcome": "ok"
+       },
+       {
+        "phase": "after",
+        "value": 3.4,
+        "outcome": "breach"
+       }
+      ]
+     },
+     {
+      "year": 2025,
+      "festival": "Ganesh",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 4.8,
+        "outcome": "breach"
+       },
+       {
+        "phase": "during",
+        "value": 4.8,
+        "outcome": "breach"
+       },
+       {
+        "phase": "after",
+        "value": 3.0,
+        "outcome": "ok"
+       }
+      ]
+     },
+     {
+      "year": 2025,
+      "festival": "Durga",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 4.4,
+        "outcome": "breach"
+       },
+       {
+        "phase": "during",
+        "value": 4.8,
+        "outcome": "breach"
+       },
+       {
+        "phase": "after",
+        "value": 3.2,
+        "outcome": "breach"
+       }
+      ]
+     }
+    ],
+    "pH": [
+     {
+      "year": 2023,
+      "festival": "Ganesh",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 7.72,
+        "outcome": "ok"
+       },
+       {
+        "phase": "during",
+        "value": 8.53,
+        "outcome": "breach"
+       },
+       {
+        "phase": "after",
+        "value": 7.44,
+        "outcome": "ok"
+       }
+      ]
+     },
+     {
+      "year": 2023,
+      "festival": "Durga",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 7.66,
+        "outcome": "ok"
+       },
+       {
+        "phase": "during",
+        "value": null,
+        "outcome": "missing"
+       },
+       {
+        "phase": "after",
+        "value": 7.39,
+        "outcome": "ok"
+       }
+      ]
+     },
+     {
+      "year": 2024,
+      "festival": "Ganesh",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 8.02,
+        "outcome": "ok"
+       },
+       {
+        "phase": "during",
+        "value": 8.55,
+        "outcome": "breach"
+       },
+       {
+        "phase": "after",
+        "value": 8.05,
+        "outcome": "ok"
+       }
+      ]
+     },
+     {
+      "year": 2024,
+      "festival": "Durga",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 8.22,
+        "outcome": "ok"
+       },
+       {
+        "phase": "during",
+        "value": 8.02,
+        "outcome": "ok"
+       },
+       {
+        "phase": "after",
+        "value": 8.11,
+        "outcome": "ok"
+       }
+      ]
+     },
+     {
+      "year": 2025,
+      "festival": "Ganesh",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 7.41,
+        "outcome": "ok"
+       },
+       {
+        "phase": "during",
+        "value": 8.01,
+        "outcome": "ok"
+       },
+       {
+        "phase": "after",
+        "value": 7.92,
+        "outcome": "ok"
+       }
+      ]
+     },
+     {
+      "year": 2025,
+      "festival": "Durga",
+      "points": [
+       {
+        "phase": "pre",
+        "value": 8.25,
+        "outcome": "ok"
+       },
+       {
+        "phase": "during",
+        "value": 8.24,
+        "outcome": "ok"
+       },
+       {
+        "phase": "after",
+        "value": 8.29,
+        "outcome": "ok"
+       }
+      ]
+     }
+    ]
+   },
+   "festivals_present": [
+    "Durga",
+    "Ganesh"
+   ],
+   "years_present": [
+    2023,
+    2024,
+    2025
+   ],
+   "rank": 7
+  }
+ ],
+ "verification": {
+  "badge": "Verified: 416 of 416 numbers, 0 health claims",
+  "passed": true
+ },
+ "method": {
+  "severity_weights": {
+   "Dissolved oxygen": 0.35,
+   "BOD": 0.35,
+   "pH": 0.15,
+   "worst_value_penalty": 0.15
+  },
+  "festival_weight": {
+   "Durga": 2.0,
+   "Ganesh": 1.0
+  },
+  "tiers": [
+   {
+    "min": 75,
+    "key": "critical",
+    "label_en": "Critical concern"
+   },
+   {
+    "min": 50,
+    "key": "high",
+    "label_en": "High concern"
+   },
+   {
+    "min": 25,
+    "key": "moderate",
+    "label_en": "Moderate concern"
+   },
+   {
+    "min": 0,
+    "key": "lower",
+    "label_en": "Lower concern (based on available data)"
+   }
+  ],
+  "evidence_strength": "strong: >=12 readings & >=4 combos; moderate: >=6 readings & >=2 combos; else limited"
+ }
+}

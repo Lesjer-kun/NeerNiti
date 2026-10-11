@@ -1,0 +1,153 @@
+{
+ "passed": true,
+ "badge": "Verified: 416 of 416 numbers, 0 health claims",
+ "numbers_found": 416,
+ "numbers_verified": 416,
+ "health_claims": 0,
+ "texts": {
+  "brief_en": {
+   "label": "brief_en",
+   "passed": true,
+   "badge": "Verified: 140 of 140 numbers, 0 health claims",
+   "health_claims": [],
+   "numbers_found": 140,
+   "numbers_verified": 140,
+   "unverified": []
+  },
+  "brief_hi": {
+   "label": "brief_hi",
+   "passed": true,
+   "badge": "Verified: 140 of 140 numbers, 0 health claims",
+   "health_claims": [],
+   "numbers_found": 140,
+   "numbers_verified": 140,
+   "unverified": []
+  },
+  "reason_en:Bairagarh": {
+   "label": "reason_en:Bairagarh",
+   "passed": true,
+   "badge": "Verified: 8 of 8 numbers, 0 health claims",
+   "health_claims": [],
+   "numbers_found": 8,
+   "numbers_verified": 8,
+   "unverified": []
+  },
+  "reason_hi:Bairagarh": {
+   "label": "reason_hi:Bairagarh",
+   "passed": true,
+   "badge": "Verified: 8 of 8 numbers, 0 health claims",
+   "health_claims": [],
+   "numbers_found": 8,
+   "numbers_verified": 8,
+   "unverified": []
+  },
+  "reason_en:Malikhedi": {
+   "label": "reason_en:Malikhedi",
+   "passed": true,
+   "badge": "Verified: 8 of 8 numbers, 0 health claims",
+   "health_claims": [],
+   "numbers_found": 8,
+   "numbers_verified": 8,
+   "unverified": []
+  },
+  "reason_hi:Malikhedi": {
+   "label": "reason_hi:Malikhedi",
+   "passed": true,
+   "badge": "Verified: 8 of 8 numbers, 0 health claims",
+   "health_claims": [],
+   "numbers_found": 8,
+   "numbers_verified": 8,
+   "unverified": []
+  },
+  "reason_en:Shahpura": {
+   "label": "reason_en:Shahpura",
+   "passed": true,
+   "badge": "Verified: 8 of 8 numbers, 0 health claims",
+   "health_claims": [],
+   "numbers_found": 8,
+   "numbers_verified": 8,
+   "unverified": []
+  },
+  "reason_hi:Shahpura": {
+   "label": "reason_hi:Shahpura",
+   "passed": true,
+   "badge": "Verified: 8 of 8 numbers, 0 health claims",
+   "health_claims": [],
+   "numbers_found": 8,
+   "numbers_verified": 8,
+   "unverified": []
+  },
+  "reason_en:Rani Kamlapati / Kamla Park": {
+   "label": "reason_en:Rani Kamlapati / Kamla Park",
+   "passed": true,
+   "badge": "Verified: 8 of 8 numbers, 0 health claims",
+   "health_claims": [],
+   "numbers_found": 8,
+   "numbers_verified": 8,
+   "unverified": []
+  },
+  "reason_hi:Rani Kamlapati / Kamla Park": {
+   "label": "reason_hi:Rani Kamlapati / Kamla Park",
+   "passed": true,
+   "badge": "Verified: 8 of 8 numbers, 0 health claims",
+   "health_claims": [],
+   "numbers_found": 8,
+   "numbers_verified": 8,
+   "unverified": []
+  },
+  "reason_en:Hathaikheda": {
+   "label": "reason_en:Hathaikheda",
+   "passed": true,
+   "badge": "Verified: 12 of 12 numbers, 0 health claims",
+   "health_claims": [],
+   "numbers_found": 12,
+   "numbers_verified": 12,
+   "unverified": []
+  },
+  "reason_hi:Hathaikheda": {
+   "label": "reason_hi:Hathaikheda",
+   "passed": true,
+   "badge": "Verified: 12 of 12 numbers, 0 health claims",
+   "health_claims": [],
+   "numbers_found": 12,
+   "numbers_verified": 12,
+   "unverified": []
+  },
+  "reason_en:Khatlapura": {
+   "label": "reason_en:Khatlapura",
+   "passed": true,
+   "badge": "Verified: 12 of 12 numbers, 0 health claims",
+   "health_claims": [],
+   "numbers_found": 12,
+   "numbers_verified": 12,
+   "unverified": []
+  },
+  "reason_hi:Khatlapura": {
+   "label": "reason_hi:Khatlapura",
+   "passed": true,
+   "badge": "Verified: 12 of 12 numbers, 0 health claims",
+   "health_claims": [],
+   "numbers_found": 12,
+   "numbers_verified": 12,
+   "unverified": []
+  },
+  "reason_en:Prempura": {
+   "label": "reason_en:Prempura",
+   "passed": true,
+   "badge": "Verified: 12 of 12 numbers, 0 health claims",
+   "health_claims": [],
+   "numbers_found": 12,
+   "numbers_verified": 12,
+   "unverified": []
+  },
+  "reason_hi:Prempura": {
+   "label": "reason_hi:Prempura",
+   "passed": true,
+   "badge": "Verified: 12 of 12 numbers, 0 health claims",
+   "health_claims": [],
+   "numbers_found": 12,
+   "numbers_verified": 12,
+   "unverified": []
+  }
+ }
+}

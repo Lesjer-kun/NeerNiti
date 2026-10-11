@@ -1,0 +1,49 @@
+VISARJAN GHAT WATCH - PRE-FESTIVAL WATER-QUALITY BRIEF
+Date: 11 October 2026
+For: Bhopal Municipal Corporation, Durga visarjan planning
+Data: MPPCB Ganesh and Durga immersion reports 2023-2025, 7 Bhopal ghats, 1524 readings
+Reference: CPCB Class B (outdoor bathing) limits - DO at least 5 mg/l, BOD at most 3 mg/l, pH 6.5-8.5
+
+1. GHATS RANKED BY CONCERN (historical readings against Class B limits)
+  1. Bairagarh (Upper Lake) - High concern; strong evidence; stable trend
+     DO below 5 mg/l in 11 of 13 readings (lowest 0); BOD above 3 mg/l in 13 of 13 (highest 14).
+     Data gaps: 5 of 18 year-festival-phase combinations have no DO/BOD/pH reading.
+  2. Malikhedi (Kund) - High concern; strong evidence; worsening trend
+     DO below 5 mg/l in 9 of 13 readings (lowest 0.6); BOD above 3 mg/l in 11 of 13 (highest 16.8).
+     Data gaps: 5 of 18 year-festival-phase combinations have no DO/BOD/pH reading.
+  3. Shahpura (Shahpura Lake) - Moderate concern; strong evidence; stable trend
+     DO below 5 mg/l in 5 of 18 readings (lowest 2.5); BOD above 3 mg/l in 18 of 18 (highest 11.6).
+  4. Rani Kamlapati / Kamla Park (Lower Lake (as printed in Durga tables)) - Moderate concern; strong evidence; worsening trend
+     DO below 5 mg/l in 6 of 18 readings (lowest 2.4); BOD above 3 mg/l in 18 of 18 (highest 9.2).
+  5. Hathaikheda (Hathaikheda dam) - Moderate concern; strong evidence; worsening trend
+     DO below 5 mg/l in 0 of 18 readings (lowest 5.1); BOD above 3 mg/l in 16 of 18 (highest 22); pH outside 6.5-8.5 in 3 of 18.
+  6. Khatlapura (Lower Lake) - Moderate concern; strong evidence; stable trend
+     DO below 5 mg/l in 8 of 18 readings (lowest 4); BOD above 3 mg/l in 15 of 17 (highest 11.2); pH outside 6.5-8.5 in 1 of 18.
+  7. Prempura (Upper Lake) - Lower concern (based on available data); strong evidence; worsening trend
+     DO below 5 mg/l in 3 of 18 readings (lowest 3.9); BOD above 3 mg/l in 9 of 15 (highest 6.8); pH outside 6.5-8.5 in 2 of 17.
+
+2. SUGGESTED ACTION CATEGORIES
+  Testing priorities (where new samples add most information):
+    - Bairagarh: 5 missing year-festival-phase combinations; 6 missing DO/BOD/pH readings
+    - Malikhedi: 5 missing year-festival-phase combinations; 6 missing DO/BOD/pH readings
+    - Prempura: 4 missing DO/BOD/pH readings
+  Aeration priorities (lowest dissolved oxygen on record):
+    - Bairagarh: DO below 5 mg/l in 11 of 13 readings; lowest 0 mg/l (Ganesh 2023, after, report page 26)
+    - Malikhedi: DO below 5 mg/l in 9 of 13 readings; lowest 0.6 mg/l (Ganesh 2025, during, report page 29)
+    - Khatlapura: DO below 5 mg/l in 8 of 18 readings; lowest 4 mg/l (Ganesh 2024, during, report page 69)
+  Cleaning priorities (highest organic load, BOD):
+    - Bairagarh: BOD above 3 mg/l in 13 of 13 readings; highest 14 mg/l (Ganesh 2024, after, report page 69)
+    - Shahpura: BOD above 3 mg/l in 18 of 18 readings; highest 11.6 mg/l (Durga 2024, after, report page 26)
+    - Rani Kamlapati / Kamla Park: BOD above 3 mg/l in 18 of 18 readings; highest 9.2 mg/l (Ganesh 2023, after, report page 27)
+
+3. DATA LIMITATIONS
+  - Units are not printed in the MPPCB reports; standard units (mg/l) are assumed.
+  - 174 readings are BDL/ND (below detection limit): treated as very low, not zero, not missing. 61 readings are missing or not sampled: never treated as clean.
+  - Bairagarh: no Durga 2025 table in the report; Durga 2025 is not covered.
+  - Malikhedi: no Durga 2025 table in the report; Durga 2025 is not covered.
+  - Rani Kamlapati / Kamla Park: site-name confidence is medium. Ganesh tables and Durga tables print different names for this site; these may be two places.
+  - Only pH, DO and BOD have CPCB Class B limits. COD, solids, turbidity, conductivity and metals are shown for information only. Suspended solids were not tested in every year.
+  - Readings are one sample per phase from past festivals. They describe past conditions, not live water quality.
+
+4. NOTE
+  This brief compares past MPPCB readings with CPCB Class B limits only. It does not describe what the water will do to people, and it does not describe current conditions. It supports the officer's decision; it does not replace it. Every number above is traceable to a report page in the evidence view.

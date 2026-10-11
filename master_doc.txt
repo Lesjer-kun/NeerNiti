@@ -1,0 +1,1811 @@
+VISARJAN GHAT WATCH  |  MASTER PROJECT DOCUMENT
+Project specification and design reference  |  Page 1
+Visarjan Ghat Watch
+Master Project Document
+One-line description: A pre-festival water-quality risk briefing tool that helps Bhopal Municipal Corporation officers 
+prioritize testing, cleaning and aeration at idol-immersion ghats using traceable historical MPPCB readings.
+Document field
+Value
+Document purpose
+Master reference for understanding, designing, building, validating, operating and extending the project
+Project type
+Public-interest software / data-analysis tool
+Current stage
+Specification defined; implementation status is not verifiable from the supplied documents
+Document version
+1.0
+Document date
+11 October 2026
+Project owner/team
+Project team; member names were not included in the supplied sources
+Primary user
+Bhopal Municipal Corporation (BMC) officer planning Durga visarjan at the ghats
+Planning context
+Claude Impact Lab x Cerebras Cafe Compute, Bhopal - Track 2
+Source and status rule: This document consolidates the supplied Visarjan Ghat Watch: Solution Architecture & 
+Project Specification and Track 2: Visarjan Ghat Watch - Participant Guide. Features are described as requirements 
+or plans unless the supplied documents explicitly establish that they have been implemented. No implementation 
+result, final ranking, deployment URL, or measured user outcome is assumed.
+
+VISARJAN GHAT WATCH  |  MASTER PROJECT DOCUMENT
+Project specification and design reference  |  Page 2
+Document map
+0. Project overview and scope 
+1. Background and problem definition 
+2. Research and discovery 
+3. Goals, requirements and success criteria 
+4. Proposed solution and product design 
+5. System architecture and design 
+6. Technical approach and core logic 
+7. Technology stack and tools 
+8. Implementation plan 
+9. Challenges, risks and mitigation 
+10. Testing, validation and quality assurance 
+11. Deployment, operations and maintenance 
+12. Impact, value and differentiation 
+13. Feasibility, viability and sustainability 
+14. Team, responsibilities and governance 
+15. Future roadmap and expansion 
+16. Documentation, references and glossary 
+17. Open questions and action items
+
+VISARJAN GHAT WATCH  |  MASTER PROJECT DOCUMENT
+Project specification and design reference  |  Page 3
+0. Project Overview
+0.1 Elevator pitch
+Visarjan Ghat Watch turns historical water-quality measurements that are buried in long MPPCB reports into a ranked, 
+evidence-backed briefing for the BMC officer planning Durga visarjan. It compares relevant readings with CPCB Class B 
+criteria, keeps missing measurements visibly missing, traces displayed figures to their report pages, and prepares a short 
+Hindi and English brief for operational planning.
+0.2 Problem being addressed
+MPPCB reports water-quality readings around Ganesh and Durga immersion at three stages: before immersion, during 
+immersion and about one week afterwards. The supplied guide says these findings are published in reports roughly 87-
+118 pages long, while the solution document describes reports of about 90-120 pages. The results are not conveniently 
+aligned against the relevant criteria or compared across years for planning purposes.
+The supplied documents highlight these findings for Bhopal ghats across 2023-2025:
+
+Dissolved oxygen (DO) was reported as 0 mg/l four times at Bairagarh (Sant Hirdaram) kund across 2023 and 2025.
+
+42 of 116 DO readings were below the CPCB Class B threshold of 5 mg/l.
+
+100 of 112 BOD readings were above the CPCB Class B limit of 3 mg/l.
+These are figures stated in the supplied project guide and solution specification. The build must reproduce the headline 
+counts from the provided data before the dashboard relies on them.
+0.3 Proposed solution
+The project is designed to provide one focused workflow:
+1. Rank seven Bhopal ghats by evidence-based risk, with a plain-language reason for each rank.
+2. Let the officer inspect the measurements behind a conclusion, including year, festival, sampling phase, value, unit, flag 
+and source PDF page.
+3. Show data gaps directly so lack of sampling is not mistaken for good water quality.
+4. Generate a short, shareable bilingual briefing with suggested testing, aeration and cleaning priorities, plus a clear 
+limitations statement.
+0.4 Target user and primary use case
+Primary user: The BMC officer responsible for planning Durga visarjan at the ghats.
+Primary use case: Before the festival, the officer reviews the ranked ghats, inspects the evidence and gaps, then uses 
+the briefing to help prioritize where additional testing, cleaning or aeration should be considered.
+The tool supports the officer's decision; it does not autonomously dispatch teams or make official regulatory or health 
+determinations.
+0.5 Core differentiator
+Trustworthy, auditable briefing rather than an opaque AI answer. Python rules calculate metrics and risk tiers 
+deterministically. An optional language model may draft explanations and Hindi text from a verified facts table, but it must 
+not originate numerical claims. A checker verifies each number against the facts table and a phrase list blocks 
+unsupported health claims.
+0.6 Project objectives
+
+Make the historical water-quality evidence usable for a time-sensitive pre-festival decision.
+
+Compare relevant readings against clearly stated CPCB Class B criteria.
+
+Make both severity and confidence in the available evidence visible.
+
+Preserve traceability from displayed values to source report pages.
+
+Provide a short Hindi and English operational brief.
+
+Be usable from a phone through a link, without installation or a user account.
+
+State data gaps and analytical limits honestly.
+0.7 Project scope
+In scope for the specified MVP
+
+The 1,524-row Bhopal data file covering seven ghats and the 2023-2025 period.
+
+Explicit treatment of missing values and BDL/ND flags.
+
+Rule-based metrics against the specified CPCB Class B thresholds for DO, BOD and pH.
+
+A ranked view of seven ghats, evidence-strength information and a phase view.
+
+A readings/evidence table and a panel explaining missing years and phases.
+
+A Hindi and English one-page brief, delivered as copy-ready text and a printable PDF.
+
+VISARJAN GHAT WATCH  |  MASTER PROJECT DOCUMENT
+Project specification and design reference  |  Page 4
+
+Automated numeric verification and checks against prohibited health claims.
+Out of scope for the initial version
+
+Health-effect predictions or medical advice.
+
+Applying Class B limits to chromium, lead, zinc or copper when the selected criteria do not specify Class B limits for 
+these metals.
+
+A general portal, user accounts, login system or multi-user administration.
+
+Live connections to government systems or live water sensors.
+
+Treating records for the old ghats as if they represented the four new BMC ghats.
+Assumptions and constraints
+
+The provided public datasets and source reports are the initial data sources.
+
+The tool is a decision-support briefing, not a replacement for fresh sampling or the officer's judgment.
+
+The guide's source-page field can be used to trace a reading into the corresponding source PDF.
+
+The Class B comparison is used because organised outdoor bathing is identified in the source documents as the 
+closest designated use to immersion; this rationale must be stated in the product.
+
+No live government portal is to be logged into, scraped or written to during the event build.
+
+The event guide requires an open-source repository and says no API keys or secrets should be committed.
+1. Background and Problem Definition
+1.1 Background
+The MP Pollution Control Board (MPPCB) monitors water quality around Ganesh and Durga idol immersion. The readings 
+cover a number of parameters and are recorded for phases before, during and after immersion. The source documents 
+explain that a reader must interpret abbreviated parameter names, assumed units, missing markers and differing site 
+labels, then compare values against applicable water-quality criteria.
+The project guide also describes a planning context in which the National Green Tribunal (NGT) has banned immersion in 
+the Upper and Lower Lakes and BMC is building dedicated ghats. The immediate planning milestone identified in the 
+source documents is Durga visarjan on 20 October 2026.
+1.2 Problem statement
+A BMC officer planning Durga visarjan needs to decide where additional water testing, cleaning and aeration 
+deserve attention, but the historic evidence is fragmented across lengthy reports and incomplete sampling records. 
+Without a consistent comparison to stated limits and a visible account of missing data, the officer must manually 
+reconstruct trends and may not know how strong or weak the evidence is for each ghat.
+1.3 Current workflow described by the sources
+Current workflow: MPPCB PDF reports → manual search for readings, years and phases → manual comparison across 
+years → officer relies heavily on memory to prioritize action.
+Proposed workflow:
+1. Load the historical CSV, source reports and CPCB criteria.
+2. Clean values while preserving the difference between missing, BDL and ND.
+3. Calculate per-ghat metrics and evidence coverage.
+4. Create a traceable facts table and deterministic ranking.
+5. Draft plain-language reasons and Hindi text from verified facts.
+6. Verify generated numbers and screen for unsupported health claims.
+7. Publish the static dashboard, evidence view and bilingual brief.
+1.4 Root-cause analysis
+Observed problem
+Underlying cause described in the sources
+Consequence for the user
+Values are hard to compare across 
+years
+Readings are embedded in lengthy reports and not aligned 
+in a single decision view
+A cross-year pattern is difficult to review 
+quickly
+A blank may be misinterpreted
+Reports use blanks, underscores, dashes, asterisks and 
+“not sampled” markers
+Missing evidence could incorrectly 
+appear reassuring
+BDL or ND may be misread
+These labels mean below detection limit / not detected, not 
+zero
+The analysis could distort the 
+measurement's meaning
+Some ghats have incomplete 
+phases or years
+Sampling coverage differs; some ghats were sampled only 
+during immersion and some recent tables are absent
+Evidence strength differs across ghats
+Site naming is ambiguous
+Ganesh and Durga reports use different names for Rani 
+Kamlapati ghat / Kamla Park kund
+Combining records without a warning 
+could join different places
+
+VISARJAN GHAT WATCH  |  MASTER PROJECT DOCUMENT
+Project specification and design reference  |  Page 5
+Observed problem
+Underlying cause described in the sources
+Consequence for the user
+AI-generated prose could introduce 
+unsupported numbers
+Language models can generate text not present in the 
+evidence
+An unverified brief could damage trust in 
+the ranking
+1.5 Stakeholders
+Stakeholder
+Relationship to the project
+Need or responsibility
+BMC planning officer
+Primary user
+Review risk, evidence gaps and suggested operational 
+priorities
+MPPCB
+Source of historical monitoring reports
+Readings and source-page evidence underpin the 
+analysis
+CPCB
+Source of water-quality criteria
+Defines the comparison thresholds referenced by the 
+project
+BMC teams responsible for field 
+actions
+Potential downstream users of the brief
+Receive clearer priorities for testing, cleaning and 
+aeration
+Project developers and maintainers
+Build and maintain the tool
+Preserve data lineage, reproducibility and clear 
+limitations
+Government department / future 
+adopters
+Potential recipient after the event
+Need readable code, a clear README, licence and run 
+instructions
+1.6 Why this matters
+The stated value is faster, more transparent planning from existing public evidence. The product should help the officer 
+distinguish two different things: how badly readings breach selected limits, and how complete or incomplete the evidence 
+is. It must not turn historical comparisons into unsupported claims about human health or assert that a ghat is safe solely 
+because data is missing.
+2. Research and Discovery
+2.1 Domain rules and terminology
+The solution specification selects CPCB Class B - outdoor bathing (organised) as the comparison standard because it 
+is considered the closest designated use to immersion among the listed classes. The interface should explain this choice 
+rather than imply that immersion has a bespoke standard in the dataset.
+Parameter
+Unit in the 
+guide
+Class B threshold specified for 
+the project
+How the MVP treats it
+Dissolved oxygen (DO)
+mg/l
+5 mg/l or more
+Flag readings below 5 mg/l as breaches
+Biochemical oxygen demand (BOD)
+mg/l
+3 mg/l or less
+Flag readings above 3 mg/l as breaches
+pH
+none
+6.5 to 8.5
+Flag readings outside the interval as breaches
+Total coliform
+MPN/100 ml
+500 or less
+Part of Class B criteria, but absent from the 
+supplied immersion dataset; state as a limitation
+Chromium, lead, zinc, copper
+mg/l
+No Class B limit specified in the 
+source criteria
+Show readings only; do not score against a Class 
+B limit
+Suspended solids
+mg/l
+No Class B limit specified in the 
+source criteria
+Do not compare across years where the relevant 
+Durga tables are absent
+Other parameters (COD, solids, 
+turbidity, conductivity, etc.)
+Parameter-
+specific
+No Class B limit specified for 
+them in the source table
+Retain as context where useful; do not invent a 
+Class B pass/fail threshold
+Important interpretation rules
+
+A blank, _, -, *, ** or not sampled means missing/not sampled, never “clean”.
+
+BDL means below detection limit; ND means not detected. The guide describes these as very low, not zero and not 
+missing.
+
+Preserve the printed form (value_as_printed) as well as the normalized value and flag where available.
+
+The report does not print units consistently; unit_assumed records the standard unit associated with each test.
+
+Keep Ganesh and Durga readings separate in the evidence view. Durga is weighted more heavily for the planned 
+Durga event; Ganesh is supporting context.
+
+VISARJAN GHAT WATCH  |  MASTER PROJECT DOCUMENT
+Project specification and design reference  |  Page 6
+2.2 Data inventory
+File or source
+Size / period
+Intended role
+Known caveat from the guide
+data/
+bhopal_ghats_2023_2025
+.csv
+1,524 rows; seven Bhopal ghats; 
+2023-2025
+Primary MVP dataset
+Coverage varies by ghat, year, festival and 
+phase
+data/
+sample_bhopal_2025.csv
+453 rows
+Quick development and 
+smoke-test subset
+Contains only 2025 records from the primary 
+file
+data/
+mp_immersion_sites_202
+3_2025.csv
+21,600 rows; about 100 sites per 
+festival across Madhya Pradesh
+Future statewide 
+expansion
+Less checked; records marked needs_check 
+may not have readable site names
+data/
+cpcb_water_quality_criteri
+a.csv
+19 rows
+Structured source for 
+classes A-E criteria
+Use the criteria relevant to the chosen class; 
+do not infer missing limits
+MPPCB Ganesh and 
+Durga Visarjan Report 
+2023
+87 pages, as listed in the guide
+Primary historical 
+evidence
+Use source_page to locate a reading
+MPPCB Ganesh and 
+Durga Visarjan Report 
+2024
+118 pages, as listed in the guide
+Primary historical 
+evidence
+Use source_page to locate a reading
+MPPCB Ganesh and 
+Durga Visarjan Report 
+2025
+92 pages, as listed in the guide
+Primary historical 
+evidence
+Use source_page to locate a reading
+Upper/Lower Lake water-
+quality reports
+Multiple periods listed in the guide
+Context and possible 
+future enhancement
+Not part of the core seven-ghat scoring 
+unless explicitly incorporated and 
+documented
+The file names above are taken from the participant guide; verify exact paths in the supplied repository before running the 
+pipeline.
+2.3 Key fields in the immersion dataset
+Field
+Meaning and use
+year
+Report year
+festival
+Ganesh or Durga
+site
+Standardized Bhopal ghat name in the Bhopal file
+water_body
+Lake or kund associated with a Bhopal site
+phase
+pre, during or after
+parameter
+Standardized parameter name
+value
+Numeric reading where supplied; can be empty where the report has no number
+unit_assumed
+Standard unit associated with the test
+flag
+Data status such as BDL or not sampled
+value_as_printed
+Original text as presented in the report
+parameter_as_printed
+Parameter label exactly as printed
+site_as_printed
+Site name exactly as printed
+site_match_confidence
+Confidence in standardizing the site name; used in the Bhopal file
+needs_check
+Statewide data flag for a site name that needs review
+source_page
+PDF page where the measurement can be checked
+2.4 The seven ghats in the MVP
+Standard name
+Water body
+Site-mapping note
+Bairagarh (Sant Hirdaram) kund
+Upper Lake
+High match confidence; no Durga 2025 table in the report
+Khatlapura ghat
+Lower Lake
+High match confidence
+Prempura ghat
+Upper Lake
+High match confidence
+Rani Kamlapati ghat / Kamla Park 
+kund
+Lower Lake
+Medium confidence; Ganesh tables use “Kamla Park kund” while Durga tables 
+use “Lower Lake ghat”; may be two places
+Hathaikheda dam / kund
+Hathaikheda dam
+High match confidence
+
+VISARJAN GHAT WATCH  |  MASTER PROJECT DOCUMENT
+Project specification and design reference  |  Page 7
+Standard name
+Water body
+Site-mapping note
+Malikhedi kund
+Kund
+High match confidence; no Durga 2025 table in the report
+Shahpura lake ghat
+Shahpura Lake
+High match confidence
+The ranking must not overstate certainty where a site identity or recent sampling coverage is unclear.
+2.5 Existing workflow and opportunity
+The baseline described by the sources is manual interpretation of lengthy reports, with decisions relying substantially on 
+memory. The project opportunity is not to replace sampling; it is to structure existing evidence, show its limits, make 
+source verification practical, and turn data gaps into explicit prompts for additional testing.
+2.6 Evidence quality and research conclusions
+The guide says the Bhopal CSV has been spot-checked against the source PDFs. The solution specification additionally 
+requires the build's unit test to reproduce the headline counts and recommends manually spot-checking five to ten 
+readings against the PDFs through source_page. These should be treated as verification tasks for each delivered build, 
+not as evidence that the current implementation has already passed them.
+3. Goals, Requirements and Success Criteria
+3.1 Goals
+1. Provide an interpretable ranking of the seven specified ghats.
+2. Make the evidence behind each rank inspectable.
+3. Separate severity from evidence strength.
+4. Generate a short bilingual pre-festival brief.
+5. Prevent missing data, unsupported AI-generated numbers and unsupported health claims from being presented as 
+facts.
+3.2 Functional requirements
+Priority labels: Must = described as MVP; Should = listed differentiator planned after the MVP; Could = stretch goal or 
+future enhancement. These labels describe the supplied specification, not implementation completion.
+ID
+Requirement
+Priority
+Acceptance condition
+FR-01
+Load the 1,524-row Bhopal dataset
+Must
+Pipeline reads the expected dataset and reports row/data 
+issues instead of silently dropping them
+FR-02
+Normalize missing markers separately 
+from BDL/ND
+Must
+Blank, _, -, *, **, and not sampled remain missing; BDL/ND 
+are not converted to zero
+FR-03
+Compare DO, BOD and pH to CPCB 
+Class B thresholds
+Must
+Thresholds are explicit and boundary values are handled 
+consistently
+FR-04
+Compute per-ghat metrics
+Must
+Output includes sampled readings, breaches, worst value, 
+year trend and pre/during/after pattern where data exists
+FR-05
+Weight Durga readings more heavily than 
+Ganesh context
+Must
+Weighting is documented and reproducible; exact weights 
+must be defined in implementation documentation if 
+numeric weights are used
+FR-06
+Rank seven ghats and explain each rank
+Must
+Each ghat has a risk tier, plain-language reason, evidence-
+strength indicator and phase summary
+FR-07
+Separate risk severity from evidence 
+strength
+Must
+The interface displays the two axes independently; sparse 
+data never produces an implicitly safe impression
+FR-08
+Provide a reading-level evidence view
+Must
+Each record view includes year, festival, phase, value, unit, 
+flag and source page
+FR-09
+Display missing phases and years
+Must
+A “What we don't know” panel shows gaps for each ghat; 
+missing is visually distinct from BDL
+FR-10
+Flag the ambiguous Rani Kamlapati / 
+Kamla Park site mapping
+Must
+Ganesh and Durga labels stay separate and a “may be two 
+places” warning is visible
+FR-11
+Generate a Hindi and English brief
+Must
+Brief contains top-risk ghats, three suggested action 
+categories and a data-limitations box
+FR-12
+Export/copy the brief
+Must
+Copy-ready text and a printable PDF are available
+
+VISARJAN GHAT WATCH  |  MASTER PROJECT DOCUMENT
+Project specification and design reference  |  Page 8
+ID
+Requirement
+Priority
+Acceptance condition
+FR-13
+Verify every number in generated 
+explanatory text
+Must / core trust 
+control
+Every numeric claim in generated reasons and the Hindi 
+brief is checked against the facts table; unverified claims 
+are blocked or flagged
+FR-14
+Block unsupported health-effect claims
+Must / core trust 
+control
+Banned-phrase checks run over generated prose and the 
+brief states that it reports against limits only
+FR-15
+Produce a second ranking for where new 
+testing is most valuable
+Should
+Test-Me-First ranks severity and uncertainty, and gaps can 
+increase a site's testing priority
+FR-16
+Support a tamper-test demonstration
+Should
+A changed number is caught by the numeric checker; 
+verification status is visible
+FR-17
+Recompute rankings under alternative 
+assumptions
+Should
+User can compare Class B/C/D, Durga-only vs both 
+festivals, and merged vs separate Rani Kamlapati records
+FR-18
+Show source-report page receipts and 
+evidence-linked QR codes
+Could
+Clicking a value can display its cited PDF page and the 
+brief can link to an evidence view
+FR-19
+Export a WhatsApp-friendly image card 
+and spoken Hindi summary
+Could
+English/Hindi 1080-pixel card is available and browser 
+speech synthesis can read the brief
+3.3 Non-functional requirements
+Area
+Requirement
+Trust and traceability
+Displayed metrics must be reproducible from source data and rules, with source-page references retained
+Data semantics
+Missing, BDL and ND states must remain distinguishable through parsing, calculations, visualizations and 
+exports
+Explainability
+The user should be able to understand why a ghat is ranked where it is and how much evidence supports 
+the ranking
+Safety of claims
+Report readings against limits; do not make unsupported health claims or claim that missing evidence 
+implies safety
+Usability
+A BMC officer should be able to open a link on a phone without installing an app or signing in
+Maintainability
+Readable code, reproducible build, short run instructions and open-source repository
+Runtime simplicity
+Static site is preferred; no runtime API or database is required by the specified architecture
+Bilingual output
+Hindi text and PDF output must render correctly; bundle and test Noto Sans Devanagari early
+Secret handling
+API keys remain in environment variables and are never committed to the repository
+Scope discipline
+One workflow, one primary user, one outcome; no portal-style feature expansion in the MVP
+3.4 Success metrics and acceptance targets
+These are target checks for a build; passing status is not established by the supplied documents.
+Metric / check
+Target
+Verification method
+DO headline count
+42 of 116 readings below 5 mg/l
+Automated test against the Bhopal dataset
+BOD headline count
+100 of 112 readings above 3 mg/l
+Automated test against the Bhopal dataset
+Source validation
+Manually spot-check 5-10 readings
+Open the cited report pages and compare the original 
+value, phase and site
+Ghat coverage
+Exactly seven specified MVP ghats represented
+Dataset and output audit
+Numeric claims
+Every displayed number in generated reasons / brief 
+exists in the facts table
+Automated number-auditor output and tamper test
+Health claims
+Zero unsupported health-effect claims
+Phrase audit and manual review
+Missing-data 
+semantics
+No missing value shown as clean, zero or safe by default
+Unit tests plus UI inspection of missing/BDL examples
+Traceability
+Readings in the evidence drawer include the requested 
+source context
+Sample data-to-UI verification
+Bilingual brief
+Hindi and English brief renders and remains readable 
+when printed
+Browser and PDF rendering checks
+Site ambiguity
+Rani Kamlapati / Kamla Park ambiguity is visible
+UI acceptance check
+
+VISARJAN GHAT WATCH  |  MASTER PROJECT DOCUMENT
+Project specification and design reference  |  Page 9
+3.5 Constraints and dependencies
+The build depends on the supplied CSV files, the CPCB criteria file, report PDFs, Python and pandas, and a static-site 
+workflow. If an LLM is used for prose, access to the selected inference provider is a build-time dependency, not a runtime 
+dependency. Total coliform data is not available in the primary dataset according to the source guide.
+4. Proposed Solution and Product Design
+4.1 Core user experience
+The product should open directly to a ranked overview, not a generic landing page or portal. The officer should see where 
+risk indicators are concerning, why a ghat is positioned at that level, how much evidence exists and which important data 
+gaps remain. Selecting a ghat should expose its evidence and the underlying source pages. A short brief should be 
+available to copy or print.
+4.2 MVP features
+F1. Data and risk engine
+Loads the Bhopal CSV, applies the missing-data rules, compares the supported parameters against Class B criteria, 
+calculates ghat-level metrics, gives Durga data greater relevance for the planned Durga event, and outputs facts and 
+source-page references. Metals are shown as readings only; suspended solids are not compared across years where the 
+relevant Durga tables are absent.
+F2. Ranked ghat view
+Seven ghat cards, each with a risk tier, a one-sentence reason, evidence-strength badge and mini phase chart. Severity 
+and evidence strength must be shown as two different dimensions. A ghat with few readings must not appear safe merely 
+because few breaches were observed.
+F3. Evidence and gaps drawer
+A reading table with year, festival, phase, value, unit, flag and source page, plus a “What we don't know” panel listing 
+missing years and phases. “Not sampled” and BDL use different visual treatments. The Rani Kamlapati / Kamla Park 
+naming ambiguity must remain visible.
+F4. Bilingual briefing
+A one-page Hindi and English summary of the top-risk ghats, three action categories (testing, aeration and cleaning 
+priorities) and limitations of the data. Provide copy-ready text and a printable PDF.
+4.3 Differentiators and stretch goals
+Feature
+Priority in supplied 
+specification
+Intended behavior
+Test-Me-First
+First differentiator
+Produces a second ranking for where a new test is most valuable before 
+20 October, based on severity x uncertainty. Bad readings plus missing 
+phases or no recent table should increase testing priority.
+Tamper Test / live number 
+auditor
+Second differentiator
+Checks every numeric claim against the facts table and blocks health-
+claim phrases. A visible status badge summarizes the audit. A 
+demonstration edit should be caught by the checker.
+Rank-stability dial
+Third differentiator
+Recalculates results for alternate assumptions: Class B vs C vs D; Durga-
+only vs both festivals; and with/without the potentially ambiguous site 
+merge. It distinguishes robustly high-risk results from assumption-
+dependent results.
+Receipts
+Stretch goal
+Renders the cited PDF page (whole page or relevant crop) when a value 
+is clicked; the brief can include a QR code to the evidence view.
+Pocket Briefing
+Stretch goal
+Exports a 1080-pixel Hindi and English shareable card and offers “Listen 
+in Hindi” using browser speech synthesis. Offline behavior is a stated 
+target for the static site once opened.
+
+VISARJAN GHAT WATCH  |  MASTER PROJECT DOCUMENT
+Project specification and design reference  |  Page 10
+4.4 User journey
+1. The officer opens the static link.
+2. The officer reviews the seven-ghat risk ranking.
+3. The officer checks the reason, severity and evidence strength.
+4. The officer opens the readings and missing-data details.
+5. The officer follows a number to its year, festival, phase and report page.
+6. The officer reviews the Hindi-English brief and its limitations.
+7. The officer uses the information to plan testing, cleaning and aeration.
+4.5 Primary use cases
+Use case
+User action
+Expected system response
+Compare ghats before Durga 
+visarjan
+Open the dashboard
+Show all seven ghats, ranking reasons, severity and evidence 
+strength
+Validate a concerning value
+Select a ghat and a reading
+Show year, festival, phase, value, unit, flag and source page
+Understand incomplete evidence
+Open data-gap details
+Show missing years/phases clearly and avoid interpreting them 
+as clean results
+Prepare an operational brief
+Open brief view/export
+Provide Hindi and English copy-ready content and a printable 
+PDF
+Evaluate where a new test is most 
+useful
+Use Test-Me-First if implemented
+Prioritize severity together with uncertainty and data gaps
+Check reliability of AI-generated 
+explanation
+Inspect verification status / run 
+tamper test
+Show whether numeric claims are grounded in the facts table 
+and flag an edited unsupported number
+4.6 Product boundaries
+The system calculates and presents historical evidence. It does not conduct sampling, validate real-time water conditions, 
+issue regulatory determinations, predict health impacts, send crews, or establish that a site is safe. Suggestions about 
+testing, aeration and cleaning remain decision support for the responsible officer.
+5. System Architecture and Design
+5.1 Recommended architecture
+The specified architecture performs all data processing at build time. The browser reads generated static files; no 
+backend, database, REST API or WebSocket connection is required at runtime.
+Stage
+Processing / output
+Data sources
+Bhopal CSV (1,524 rows), CPCB criteria and source-page metadata
+Batch pipeline
+Python 3 + pandas via build.py
+Cleaning
+Preserve numeric values, BDL, ND and missing states separately
+Metrics and ranking
+Per-ghat metrics, deterministic severity tiers and separate evidence-strength information
+Facts and provenance
+Verified facts table with source-page references
+Optional language drafting
+LLM drafts reasons and Hindi text from the facts table; no new numbers are permitted
+Verification
+Python number checker plus health-claim phrase list
+Generated artifacts
+ranking.json, evidence.json, brief text and printable PDF
+Delivery
+Static website / hosted link
+5.2 Component breakdown
+Component
+Responsibility
+Input
+Output
+Data loader
+Read project CSVs and criteria
+Bhopal CSV, criteria CSV
+Loaded records with source fields
+Cleaning and semantic 
+normalization
+Preserve data meaning and separate 
+missing from BDL/ND
+Raw values and flags
+Normalized records with status 
+retained
+Metrics and rule engine
+Calculate sample counts, breaches, worst 
+values, trends and phase patterns
+Normalized records + Class 
+B thresholds
+Per-ghat metrics and deterministic 
+severity tier inputs
+
+VISARJAN GHAT WATCH  |  MASTER PROJECT DOCUMENT
+Project specification and design reference  |  Page 11
+Component
+Responsibility
+Input
+Output
+Evidence/facts builder
+Pair calculated facts with report provenance
+Metrics and source-page 
+fields
+Facts table, evidence JSON
+Ranking module
+Produce seven-ghat ordering and separate 
+severity/evidence indicators
+Metrics and documented 
+weighting
+ranking.json and ranking metadata
+Optional language-
+model drafting
+Convert approved facts into plain-language 
+reasons and Hindi brief wording
+Verified facts table
+Draft explanations; no new 
+numbers permitted
+Verification module
+Check numeric claims and prohibited health 
+language
+Draft text + facts table + 
+phrase list
+Verified or flagged output and audit 
+status
+Frontend
+Display ranked ghats, evidence, gaps, 
+charts and brief
+Generated JSON / static 
+files
+Phone-friendly static user 
+experience
+Brief exporter
+Produce readable bilingual text and PDF
+Approved brief + bundled 
+Devanagari font
+Copy-ready text and printable PDF
+Optional receipt renderer
+Render source PDF pages at build time
+source_page and source 
+PDFs
+Evidence-page images
+5.3 Data flow
+1. build.py reads the Bhopal CSV and applies missing-value rules while preserving the distinction between missing, 
+BDL and ND.
+2. The engine compares supported readings to CPCB Class B criteria and calculates ghat-level metrics.
+3. The ranking logic produces severity and evidence-strength information separately; Durga readings receive greater 
+weight for the planned Durga event.
+4. A facts table stores values, calculated metrics and source-page links. This table is the approved numeric basis for 
+explanations.
+5. An optional LLM drafts reasons and Hindi text from that table. It is not allowed to originate numeric facts.
+6. A number checker compares generated numbers with the facts table, while a phrase list screens against unsupported 
+health claims.
+7. The build emits static JSON and brief files, and the website displays them without a live backend.
+The source specification does not define every internal formula or threshold for the overall risk tier. Those implementation 
+choices must be explicitly documented, reproducible and tested rather than silently invented.
+5.4 Data model and storage
+The source documents specify no runtime database. The CSV files and generated JSON in the repository act as the data 
+store.
+Recommended generated artifacts stated in the solution specification:
+
+ranking.json - per-ghat ranking and summary data.
+
+evidence.json - reading-level evidence and source context.
+
+Brief text and printable PDF in Hindi and English.
+The exact JSON schema is not included in the supplied documents and must be recorded in the repository once defined.
+5.5 Interface contracts
+
+The ranking view consumes generated ranking data and must display all seven defined sites.
+
+The evidence view consumes reading-level records and must retain year, festival, phase, value, unit, flag and source 
+page.
+
+The brief is generated from a facts table and cannot introduce unverified numeric claims.
+
+Source receipts, if included, are generated at build time from the report page reference.
+
+The static host serves built artifacts over HTTPS; there is no runtime API contract in the specified design.
+5.6 Architecture decisions
+Decision
+Selected approach
+Alternative / note
+Rationale from the source specification
+Ranking
+Deterministic Python rules
+Letting an LLM choose 
+ranks
+Rules are reproducible and support trustworthy, 
+auditable decisions
+Frontend
+Static HTML/JS with Tailwind or Vite + 
+React
+Streamlit is a fallback
+Static deployment is shareable and requires no 
+runtime server
+Processing
+Python 3 + pandas at build time
+Runtime computation
+Creates prepared JSON and briefs ahead of use
+Runtime backend
+None
+REST API / WebSockets
+Not required for a static data-driven product
+Data storage
+CSV and generated JSON in 
+repository
+Database
+Fits the limited workflow and public data pack
+
+VISARJAN GHAT WATCH  |  MASTER PROJECT DOCUMENT
+Project specification and design reference  |  Page 12
+Decision
+Selected approach
+Alternative / note
+Rationale from the source specification
+AI
+Claude or Cerebras inference at build 
+time only
+Runtime AI calls
+LLM is restricted to prose drafting, never numeric 
+calculation
+PDF generation
+Browser print or WeasyPrint
+Other PDF tooling if 
+needed
+Both are listed options; Hindi rendering must be 
+tested early
+Source page 
+images
+PyMuPDF or pdftoppm (stretch goal)
+Manual linking only
+Can provide receipts to original evidence
+Hosting
+GitHub Pages is the stated hosting 
+option
+Other static HTTPS host
+A link can be opened from a phone without 
+installation
+6. Technical Approach and Core Logic
+6.1 Deterministic metrics and ranking
+Risk computations must be handled in Python rather than generated by an LLM. For each ghat, the specification calls for:
+
+Number of readings sampled.
+
+Number of readings breaching the applicable limit.
+
+Worst recorded value.
+
+Trend by year.
+
+Before/during/after sampling pattern.
+
+A severity/risk view and a separate evidence-strength view.
+Durga records are weighted more heavily because Durga visarjan is the event being planned; Ganesh data is supporting 
+context. The supplied specification does not state exact numeric weights or the complete formula that converts metrics 
+into each risk tier. The implementation must define that formula and document it alongside tests.
+6.2 Handling values and flags
+The parser must preserve three distinct states:
+1. Numeric measurement available: evaluate the value against a threshold only where a threshold is defined.
+2. BDL / ND: preserve the low/non-detected meaning and original flag; do not substitute zero.
+3. Missing / not sampled: preserve the absence of a reading; do not count it as a compliant observation or present it as 
+a clean result.
+The evidence view should retain the original printed text to support manual source checks.
+6.3 Evidence-strength calculation
+Evidence strength is distinct from severity. The specification describes evidence strength in terms of the number of 
+readings and which years/phases are missing. The precise formula is not supplied. A delivered build must state how 
+coverage is summarized, handle ambiguous site mapping explicitly, and avoid making a sparsely measured ghat appear 
+safer due to low observation count.
+6.4 Test-Me-First logic
+The planned secondary ranking identifies where an additional pre-festival test is most valuable. The source specification 
+describes the score conceptually as severity x uncertainty: concerning historic readings combined with missing phases 
+or no recent table should increase the value of testing. The exact scaling/normalization is not specified and must be 
+documented before the ranking is used operationally.
+6.5 Rank-stability analysis
+The planned rank-stability control recalculates the ranking under alternate choices:
+
+CPCB Class B versus Class C versus Class D limits.
+
+Durga-only data versus both festivals.
+
+With or without merging the Rani Kamlapati / Kamla Park records.
+Ghats remaining in the top three across all tested settings may be labelled “robustly high-risk”; ghats whose ranks move 
+should be described as assumption-dependent. Do not use these labels until the alternative scenarios have actually been 
+calculated.
+6.6 AI-assisted text and numeric audit
+If an LLM is used:
+
+Provide the verified facts table as the source for reasons and the Hindi brief.
+
+Instruct it not to generate, calculate or infer new numbers.
+
+VISARJAN GHAT WATCH  |  MASTER PROJECT DOCUMENT
+Project specification and design reference  |  Page 13
+
+Extract numeric claims from the generated text and compare them with approved facts.
+
+Block or flag mismatched numbers and unsupported health claims.
+
+Show the verification result to the user.
+
+Keep the data/ranking pipeline functional if the LLM is unavailable, where feasible; the static ranking and evidence 
+should not depend on runtime inference.
+A visible sample badge is provided in the solution specification as an illustration (“Verified: 38 of 38 numbers, 0 health 
+claims”). This is an example of a possible display, not a verified result for this project.
+6.7 Known analytical limitations
+
+Total coliform is part of CPCB Class B criteria but is absent from the supplied dataset.
+
+There is no Class B limit in the source criteria for chromium, lead, zinc or copper; show their readings without 
+assigning a Class B pass/fail state.
+
+Suspended solids are absent from the Durga 2023 and Durga 2025 tables, limiting cross-year comparisons for that 
+parameter.
+
+Some ghats have incomplete sampling phases or no recent Durga table.
+
+The Rani Kamlapati / Kamla Park labels may refer to two places.
+
+Historical readings do not establish the live water condition at the time of immersion.
+
+The source documents do not provide the exact risk-tier formula, exact Durga-vs-Ganesh weights, or a validated 
+forecast model. Do not imply these are supplied facts.
+7. Technology Stack and Tools
+Layer
+Technology specified
+Role / note
+Data pipeline
+Python 3
+One build script, build.py
+Data processing
+pandas
+Load, normalize and summarize CSV data
+Frontend option A
+Plain HTML/JavaScript with Tailwind
+Lightweight static website
+Frontend option B
+Vite + React
+Alternative static front-end approach
+Frontend fallback
+Streamlit
+Fallback if development speed is preferred over shareability
+Hosting
+GitHub Pages (suggested)
+Static HTTPS link for phone access
+Data storage
+CSV + generated JSON in repository
+No runtime database specified
+Optional AI
+Claude or Cerebras inference, at build time 
+only
+Draft reasons and Hindi text from verified facts; never produce 
+numbers
+Verification
+Python number checker + health-claim phrase 
+list
+Audit generated text and support Tamper Test
+PDF
+Browser print or WeasyPrint
+Printable Hindi-English brief
+Hindi font
+Noto Sans Devanagari, bundled
+Must be tested for PDF rendering
+Optional page receipts
+PyMuPDF or pdftoppm
+Render cited report pages during build
+Secrets
+Environment variables
+Do not commit API keys to Git
+Exact dependency versions, package lock files, operating-system requirements and installation commands were not 
+specified in the supplied documents. The repository should record them once the implementation choices are finalized.
+8. Implementation Plan
+The source is a one-day build specification for 11 October 2026. The event guide says code should be written from 10:15 
+AM and a public repository submitted by 5:00 PM. Since the supplied files do not include a repository status report or 
+implementation log, the checklist below is a suggested execution sequence and must not be read as a record of 
+completed work.
+8.1 Recommended phases
+Phase
+Key work
+Completion evidence
+1. Repository and data 
+intake
+Confirm files, inspect schemas, capture 
+environment/dependencies
+Readable repository and successful CSV load
+2. Trust-critical parser and 
+metrics
+Implement missing / BDL / ND handling; Class B checks; 
+ghat metrics
+Unit tests including the guide's headline counts
+
+VISARJAN GHAT WATCH  |  MASTER PROJECT DOCUMENT
+Project specification and design reference  |  Page 14
+Phase
+Key work
+Completion evidence
+3. Ranking and evidence 
+model
+Define documented weights / tier formula; generate severity 
+and evidence-strength data
+Reproducible ranking output with every site 
+represented
+4. Evidence and gap view
+Build reading table, source-page references, missing-phase 
+panel, ambiguous-site warning
+Representative readings can be traced back to 
+PDFs
+5. Frontend and bilingual 
+brief
+Implement ranked view and Hindi-English brief/PDF
+Phone-sized UI and print rendering checks 
+pass
+6. Numeric / phrase audit
+Verify every numeric claim and screen forbidden health 
+claims
+Tamper demonstration flags a changed 
+number; audit status visible
+7. Final QA and release
+Reproduce headline counts, spot-check source pages, 
+smoke-test UI, README, licence and secrets
+Public repository can be run by another person 
+in five steps or fewer
+8.2 Minimum viable release
+The MVP should prioritize, in this order:
+1. Correct data semantics and reproducible headline counts.
+2. Ranking that separates severity from evidence completeness.
+3. Reading-level evidence and a visible missing-data panel.
+4. Short Hindi and English briefing.
+5. Numeric-claim verification and a limitations statement.
+The stretch features should not delay the data integrity and traceability controls.
+8.3 Suggested task breakdown
+Workstream
+Main responsibilities
+Suggested output
+Data and domain 
+research
+Review CPCB criteria, source reports, naming/phase coverage and 
+sampling caveats
+Data notes and manually checked 
+examples
+Risk engine
+Parsing, rules, metrics, ranks and tests
+build.py, unit tests, generated ranking 
+data
+Product interface
+Ranked cards, evidence drawer, gap states and responsive layout
+Static dashboard
+Briefing and language
+Draft/review Hindi and English content, prepare PDF, check 
+readability
+Brief text/PDF and limitations wording
+Validation and release
+Audit numbers, inspect PDF sources, test rendering, write README, 
+confirm licence and secrets
+Acceptance checklist and public 
+repository
+These workstreams may be reassigned to a smaller or larger team. The participant guide recommends teams of four to 
+five with technical and non-technical contributors, and expects meaningful work from every member.
+8.4 Fallback plan
+If time is short, retain the traceable deterministic metrics, seven-site overview, missing-data treatment, source-page 
+evidence and a plain bilingual summary. Defer page-image receipts, shareable image cards, speech synthesis and other 
+stretch functionality. Do not remove numeric verification or make missing data appear clean to save time.
+9. Challenges, Risks and Mitigation
+Risk / challenge
+Why it matters
+Mitigation stated or implied by the 
+specification
+Residual limitation
+Missing values treated as 
+clean
+Can falsely reassure the 
+officer
+Parse missing markers explicitly; display 
+gaps separately; test these cases
+Incomplete sampling still limits 
+conclusions
+BDL/ND converted to 
+zero
+Alters the meaning of the 
+source record
+Preserve the flags and original printed value
+The source does not provide a 
+numeric detection limit for every 
+reading
+Incorrect threshold 
+application
+Produces invalid breach 
+counts
+Use explicit CPCB Class B thresholds; add 
+boundary tests
+Total coliform is not present in 
+the data
+AI invents a number
+Undermines the evidence-
+based ranking
+Keep ranks/metrics deterministic; verify 
+generated numeric claims against the facts 
+table
+Text parsing and claim matching 
+need careful tests
+Unsupported health 
+claims
+Overstates what historical 
+measurements show
+Phrase list, human review and explicit 
+“readings against limits only” framing
+A phrase list may not detect 
+every misleading formulation
+
+VISARJAN GHAT WATCH  |  MASTER PROJECT DOCUMENT
+Project specification and design reference  |  Page 15
+Risk / challenge
+Why it matters
+Mitigation stated or implied by the 
+specification
+Residual limitation
+Sparse or uneven 
+sampling
+Can make a ghat look low-
+risk merely due to lack of 
+data
+Separate severity and evidence strength; add 
+missing phases/years panel; Test-Me-First 
+prioritizes uncertainty
+A gap-aware ranking still cannot 
+replace fresh sampling
+Ambiguous site matching
+Could combine different 
+physical locations
+Keep Ganesh “Kamla Park kund” and Durga 
+“Lower Lake ghat” separate and show 
+warning
+Mapping needs future 
+field/domain verification
+PDF/Hindi rendering 
+failure
+Makes the brief unusable or 
+unreadable
+Bundle Noto Sans Devanagari and test PDF 
+rendering early
+Different viewers/printers can 
+render differently
+New ghats lack historical 
+data
+Risk rank cannot be 
+inferred from records for old 
+sites
+State historical data covers old sites; add 
+new ghats only when data becomes available
+No reliable historical rank exists 
+until measurements are supplied
+Build-time LLM 
+unavailable
+Could delay language 
+generation
+Keep deterministic metrics and structured 
+evidence independent; use reviewed 
+template text as fallback
+Hindi drafting may need manual 
+completion
+Secrets committed to a 
+public repo
+Exposes credentials
+Use environment variables and check before 
+push
+Team discipline and repository 
+review are still required
+Over-expansion beyond 
+the user's workflow
+Reduces the chance of a 
+usable day-one product
+One workflow, one primary user; defer 
+statewide scope and portal features
+Broader future integration 
+remains out of the MVP
+Historical information 
+mistaken for live 
+conditions
+Leads to unsupported 
+claims about current water 
+quality
+Date each reading, show sampling phase 
+and state limitations clearly
+Fresh sampling is needed for 
+current conditions
+9.1 Critical dependencies
+The critical path is: correct source data and criteria -> correct parsing -> correct metrics -> auditable ranking -> verified 
+prose/brief. A visually polished front end cannot compensate for errors in the first four steps.
+9.2 Safety and compliance boundaries
+The initial build uses public data only, excludes personal data and must not connect to live government systems. It must 
+not state that a reading caused a health effect, and it must not present missing information as reassuring evidence.
+10. Testing, Validation and Quality Assurance
+10.1 Test strategy
+Testing should cover parser/unit tests, integration from CSV to JSON, website checks, source-PDF spot checks, 
+bilingual/PDF rendering and a user-acceptance pass on the single primary workflow.
+10.2 Essential test cases
+Test ID
+Scenario
+Expected result
+Status in this document
+TC-01
+Run pipeline on the provided 
+Bhopal CSV
+Loader handles the expected 1,524 rows and 
+surfaces parse errors
+Not verified
+TC-02
+Blank, _, -, *, **, not sampled input
+Stored as missing/not sampled, not clean or 
+zero
+Required test; not verified
+TC-03
+BDL and ND input
+Status and original text are retained; values 
+are not zeroed
+Required test; not verified
+TC-04
+DO at 5 mg/l
+Not flagged as below-5 breach
+Required test; not verified
+TC-05
+DO below 5 mg/l
+Flagged as a breach
+Required test; not verified
+TC-06
+BOD at 3 mg/l
+Not flagged as above-3 breach
+Required test; not verified
+TC-07
+BOD above 3 mg/l
+Flagged as a breach
+Required test; not verified
+TC-08
+pH at each boundary (6.5, 8.5) 
+and outside interval
+Boundaries pass the stated interval; outside 
+values breach it
+Required test; not verified
+TC-09
+Headline DO statistic
+Reproduces 42 of 116 readings below 5 mg/l
+Required acceptance test; not verified
+TC-10
+Headline BOD statistic
+Reproduces 100 of 112 readings above 3 
+mg/l
+Required acceptance test; not verified
+TC-11
+Source-page audit
+Manually checked sample of 5-10 readings 
+agrees with report pages
+Required validation; not verified
+
+VISARJAN GHAT WATCH  |  MASTER PROJECT DOCUMENT
+Project specification and design reference  |  Page 16
+Test ID
+Scenario
+Expected result
+Status in this document
+TC-12
+Sparse sampling / missing Durga 
+year
+Gap is explicit and does not imply a safe 
+ghat
+Required UI acceptance test; not verified
+TC-13
+Ambiguous site names
+Ganesh/Durga label difference remains 
+visible with warning
+Required UI acceptance test; not verified
+TC-14
+LLM changes a numeric figure
+Number auditor flags the mismatched claim
+Required differentiator test; not verified
+TC-15
+Brief contains a health-effect claim
+Phrase checker flags/blocks it; final brief 
+remains scoped to readings vs limits
+Required validation; not verified
+TC-16
+Hindi brief exported to PDF
+Devanagari glyphs render cleanly and page 
+is readable
+Required rendering test; not verified
+TC-17
+Mobile/browser open
+User can reach ranking, evidence and brief 
+without install or login
+Required usability test; not verified
+TC-18
+Ranking stability scenario
+Results recalculate according to each 
+documented assumption set
+Only applicable if the differentiator is 
+implemented; not verified
+10.3 Acceptance criteria
+A release should not be described as ready until the headline counts reproduce, a small set of values has been checked 
+against the original PDFs, missing and BDL states remain distinct throughout the pipeline, numeric claims pass the facts-
+table checker, unsupported health claims are absent, all seven ghat cards work, the ambiguity warning is present and the 
+bilingual brief renders correctly.
+10.4 Known limitations
+The source dataset lacks total coliform for Class B, has uneven time/phase coverage, has uncertain site matching for the 
+Rani Kamlapati / Kamla Park labels, and does not provide Class B criteria for the metals. The supplied documents do not 
+establish that the current code or deployment has passed the tests above.
+11. Deployment, Operations and Maintenance
+11.1 Deployment model
+The recommended model is a public static website over HTTPS, with GitHub Pages named as the main option. An officer 
+should be able to open the link on a phone without installing an app or signing in. No live backend or database is needed 
+at runtime.
+11.2 Build and release workflow
+1. Confirm the source data and criteria files in the repository.
+2. Configure any build-time inference key as an environment variable; do not store it in source control.
+3. Run python build.py to generate ranking, evidence and briefing artifacts.
+4. Run automated tests and manual PDF spot checks; review the numeric-audit result and Hindi/PDF rendering.
+5. Publish the static files and check the deployed link from a phone-sized browser.
+The above is a proposed concise operating procedure consistent with the specified architecture; exact commands beyond 
+python build.py must be confirmed in the actual repository.
+11.3 Generated artifacts
+
+ranking.json
+
+evidence.json
+
+Bilingual brief text
+
+Printable bilingual PDF
+
+Optional source-page images and evidence-linked QR codes if the receipts stretch goal is implemented
+
+Optional bilingual image cards if Pocket Briefing is implemented
+11.4 Monitoring and logging
+Because runtime processing is static, the main operational checks are build success, output validity, failed verification 
+claims, source data changes and deployed-file integrity. Logs should not contain API keys or other secrets. A visible 
+data/report date helps users understand the age of the evidence.
+
+VISARJAN GHAT WATCH  |  MASTER PROJECT DOCUMENT
+Project specification and design reference  |  Page 17
+11.5 Maintenance plan
+For a new report release or new sampling event, add the source data and PDF, verify site names/phases/source-page 
+mappings, rerun the build and tests, review changes in rank and evidence coverage, regenerate the brief, then publish. 
+Do not merge new ghats into the seven-site ranking until there is suitable data and site mapping.
+11.6 Recovery and continuity
+Retain the source CSVs, report PDFs, code and generated artifacts in the repository so the static output can be rebuilt. If 
+the LLM provider is unavailable, the numeric ranking and evidence should remain available; use a reviewed template or 
+manual prose for the brief rather than inventing content. This fallback behavior should be tested.
+12. Impact, Value and Differentiation
+12.1 Expected impact
+The expected value, not yet a measured outcome, is that the BMC officer can review historic concerns and gaps faster 
+and base follow-up decisions on traceable evidence rather than reconstructing information manually from multiple PDFs.
+Potential benefits include:
+
+Clearer priorities: a ranked view brings higher-concern sites into view.
+
+Better testing decisions: gaps become explicit and can drive a “test first” recommendation.
+
+More transparent reasoning: every ranking reason can be inspected against readings and limits.
+
+More usable communication: a short Hindi and English brief can be forwarded to relevant teams.
+
+Reduced risk of misleading output: deterministic calculations and numeric verification constrain AI-generated 
+explanations.
+
+Better institutional handover: public, readable code and reproducible artifacts support future maintenance.
+No measured time savings, cost savings or environmental improvement are claimed in the source material.
+12.2 Unique value proposition
+For the BMC officer planning Durga visarjan, Visarjan Ghat Watch organizes historical MPPCB readings into a 
+traceable, bilingual risk briefing that shows both where readings breach chosen limits and where the evidence is 
+incomplete, helping the officer prioritize follow-up without treating missing data as clean.
+12.3 Differentiation
+Alternative / baseline
+Visarjan Ghat Watch difference
+Evidence needed to support the claim
+Manual review of individual PDFs
+Consolidated cross-year, per-ghat view
+Reproducible output from the supplied CSV and 
+report checks
+Single overall score
+Severity and evidence strength shown separately
+UI review and tests with sparse vs well-sampled 
+sites
+AI-generated narrative without audit
+Numbers must match an approved facts table
+Numeric checker test and tamper demonstration
+Generic dashboard without data 
+caveats
+Missing phases, years and site ambiguity are 
+explicit
+Acceptance tests for known data gaps
+Long technical report
+Short Hindi-English summary for a defined officer 
+workflow
+Readability review with intended users
+These are intended differentiators. Superiority over other tools has not been independently benchmarked in the supplied 
+files.
+12.4 Limitations of the claimed advantage
+The solution is only as useful as the quality, coverage and correct interpretation of its historical data. It is not a real-time 
+monitoring platform, does not include all Class B parameters, and cannot establish present-day conditions at a ghat 
+without new measurements. The rankings may change under different criteria or data-merging assumptions; the rank-
+stability control is intended to make that dependence visible.
+
+VISARJAN GHAT WATCH  |  MASTER PROJECT DOCUMENT
+Project specification and design reference  |  Page 18
+13. Feasibility, Viability and Sustainability
+13.1 Technical feasibility
+The proposed implementation uses a compact batch pipeline (Python + pandas), generated JSON and a static website, 
+with no runtime database or backend. This architecture is aligned with the narrow workflow and the event's one-day build 
+constraint. Feasibility still depends on correctly implementing and testing parser semantics, rank logic, numeric auditing 
+and Hindi PDF rendering.
+13.2 Economic feasibility
+The supplied documents do not provide a budget, hosting cost, inference cost or ongoing maintenance estimate. Static 
+hosting and locally generated artifacts avoid the need for a continuously running application server, but build-time 
+inference may incur usage costs depending on the provider and plan. Any cost claim should be made only after selecting 
+the provider and estimating usage.
+13.3 Operational viability
+The intended user is narrowly defined, and the product is designed to open from a phone without installation or login. A 
+short ranked view, evidence drawer and one-page brief fit the stated workflow. Adoption and actual usefulness still need 
+to be confirmed by the BMC user or a domain expert; no user-acceptance result is included in the supplied documents.
+13.4 Long-term sustainability
+Maintenance depends on adding new public sampling data, validating site names and source pages, maintaining 
+thresholds and methodology documentation, and rerunning the tests with each data update. The project should keep 
+source data, calculation logic and generated outputs in a reproducible repository. Extension to new ghats or statewide 
+data needs a separate data-quality pass.
+13.5 Commercial viability
+A commercial model is not specified and should not be forced onto this public-interest, open-source decision-support 
+project. The guide states that the repository is to be offered to the Government of Madhya Pradesh through MPSeDC and 
+should include a licence, with MIT suggested unless the organizers advise otherwise.
+14. Team, Responsibilities and Governance
+The participant guide recommends teams of four to five with a mix of technical and non-technical contributors. Names and 
+individual assignments are not included in the supplied files, so the following is a suggested allocation rather than a record 
+of the actual team.
+Role / workstream
+Responsibilities
+Evidence of completion
+Project coordination
+Keep the build focused on the BMC officer's one workflow; track 
+acceptance criteria
+Agreed scope and status board
+Data and domain 
+research
+Review CPCB criteria, inspect source reports, verify naming and 
+phase gaps
+Source notes and manually checked 
+sample rows
+Data/risk engineering
+Implement parsing, metrics, ranking and automated tests
+Reproducible build and test results
+Interface engineering
+Create ranking cards, evidence panel, gaps display and responsive 
+layout
+Working static page
+Briefing / validation
+Review Hindi and English phrasing, PDF output, number checker 
+and limitations
+Approved brief and verification report
+Release / documentation
+README, run steps, licence, dependency notes and secret scan
+Public repo with runnable instructions
+Some roles can be combined. Every team member should have a clear deliverable. The project guide specifies that the 
+repository be public and readable, and that the README explain the team, track, primary user, how to run the tool in five 
+steps or fewer, what works and does not work, any extra data sources, and the licence.
+14.1 Ownership and access
+The actual project owner, team member names and intellectual-property arrangements are not established in the supplied 
+files. These should be recorded in the repository README. Use public data only for the event build, do not include 
+personal data, and keep API keys outside source control.
+
+VISARJAN GHAT WATCH  |  MASTER PROJECT DOCUMENT
+Project specification and design reference  |  Page 19
+15. Future Roadmap and Expansion
+15.1 Initial release
+Focus on the seven Bhopal ghats, three supported parameter thresholds, evidence traceability, visible sampling gaps, the 
+bilingual brief and numeric auditing. Verify all outputs before adding scope.
+15.2 Near-term improvements
+
+Test-Me-First ranking to prioritize additional testing before the event.
+
+Tamper Test UI and visible numeric verification status.
+
+Rank-stability comparisons for alternate CPCB classes, festival weighting and site-merge assumptions.
+
+Clickable PDF receipts and evidence-linked QR code, if time allows.
+
+WhatsApp-friendly bilingual image cards and Hindi speech playback, if time allows.
+15.3 Longer-term enhancements stated in the source documents
+
+Expand to the 21,600-row statewide dataset after reviewing rows flagged needs_check and standardizing site 
+identities.
+
+Add total coliform only when suitable data is available; it is a Class B criterion absent from the current dataset.
+
+Add the four new BMC ghats when there are appropriate monitoring records for them.
+
+Add Upper and Lower Lake reports for context.
+
+Consider integration with live monitoring after the event, as a future phase rather than part of the current MVP.
+15.4 Upgrade policy
+Each extension should preserve backward-compatible source fields, original printed values, source-page provenance and 
+explicit data-status semantics. Recompute outputs after changing thresholds or weighting, rerun all headline and numeric-
+audit checks, review ranking changes, and record the method/version used to produce the briefing.
+16. Documentation, References and Glossary
+16.1 Primary project sources
+1. Visarjan Ghat Watch: Solution Architecture & Project Specification. Supplied PDF, dated 11 October 2026. 
+Defines the MVP, feature priorities, architecture, data handling, numeric verification and stated exclusions.
+2. Track 2: Visarjan Ghat Watch - Participant Guide. Supplied PDF, event date 11 October 2026. Defines the problem, 
+dataset inventory, site list, CPCB criteria, event constraints and assessment criteria.
+3. Track repository: https://github.com/Laaaaksh/bhopal-impact-lab-2026 - the guide states that files are under 
+tracks/02-visarjan-ghat-watch and that the same files are in the Drive folder.
+16.2 Public references cited by the guide
+
+CPCB water-quality criteria: https://cpcb.gov.in/water-quality-criteria/
+
+MPPCB monitoring reports: the guide lists the 2023, 2024 and 2025 Ganesh/Durga immersion reports on MPPCB's 
+website. Use the supplied PDFs and the corresponding repository copies for reproducible validation.
+
+NGT ban / new ghats context: the participant guide cites a Free Press Journal article dated 26 February 2026. The 
+exact article URL printed in the guide is: Free Press Journal article.
+
+Durga visarjan date: the participant guide cites Drik Panchang for 20 October 2026: Drik Panchang.
+The external references above are reproduced from the supplied participant guide; this document does not independently 
+validate whether those pages remain unchanged.
+16.3 Glossary
+Term
+Meaning in this project
+BMC
+Bhopal Municipal Corporation
+MPPCB
+Madhya Pradesh Pollution Control Board
+CPCB
+Central Pollution Control Board
+NGT
+National Green Tribunal
+DO
+Dissolved oxygen
+BOD
+Biochemical oxygen demand
+BDL
+Below detection limit; not zero and not missing
+
+VISARJAN GHAT WATCH  |  MASTER PROJECT DOCUMENT
+Project specification and design reference  |  Page 20
+Term
+Meaning in this project
+ND
+Not detected; treated as very low, not zero and not missing per the guide
+CSV
+Comma-separated values data file
+JSON
+JavaScript Object Notation; format for generated ranking/evidence files
+LLM
+Large language model; used only for prose drafting in the specified design
+MVP
+Minimum viable product
+Evidence strength
+Coverage/availability of readings by count, year and phase, separate from severity
+Severity
+How strongly available readings breach the selected criteria
+16.4 Source integrity labels
+Use these labels consistently in future documents and presentations:
+
+Source-stated: explicitly provided in the solution specification or participant guide.
+
+Derived requirement: a check or implementation behavior implied by a stated feature.
+
+Implementation choice: a formula, schema or technical detail selected by the builders; document it and test it.
+
+Verified in build: supported by recorded automated/manual test output from the actual repository.
+
+Not yet verified: expected behavior without evidence that the current build passes.
+17. Open Questions and Action Items
+17.1 High-priority decisions
+Item
+Why it matters
+Suggested 
+owner
+Status
+Confirm exact repository layout and all input 
+file paths
+Avoid build failures from 
+filename/path assumptions
+Data/risk 
+engineer
+Open / not confirmed
+Define exact risk-tier formula and Durga-vs-
+Ganesh weights
+Ranking must be reproducible and 
+explainable
+Risk-engine 
+owner
+Not specified in supplied 
+documents
+Define evidence-strength calculation
+Data coverage must be visible 
+without being confused with severity
+Risk-engine 
+owner
+Not specified in supplied 
+documents
+Define Test-Me-First normalization for 
+severity x uncertainty
+Secondary recommendation ranking 
+needs a reproducible formula
+Risk-engine 
+owner
+Concept specified; formula not 
+provided
+Confirm whether Rani Kamlapati / Kamla 
+Park records remain separate in default 
+ranking
+Ambiguous site identity can alter 
+ranks
+Data/domain 
+owner
+Warning required; final default 
+behavior needs documentation
+Decide static frontend option
+Determines project scaffolding and 
+build process
+Frontend owner
+Options listed; final choice not 
+established
+Define JSON schema
+Frontend and generated outputs 
+need stable contracts
+Data/risk + 
+frontend owners
+Not supplied
+Verify headline counts and sample report 
+readings
+Establishes trust in the underlying 
+facts
+QA/data owner
+Required; results not supplied
+Test the actual numeric auditor against 
+generated text
+Prevent ungrounded numbers from 
+reaching user
+QA/verification 
+owner
+Required; results not supplied
+Test Hindi rendering and PDF output
+Makes the bilingual brief usable
+Briefing owner
+Required; results not supplied
+Confirm repository licence and secret scan
+Required for readable public 
+handover
+Release owner
+Guide recommends MIT unless 
+organizers specify otherwise
+Confirm implementation/deployment status
+The supplied PDFs do not report a 
+final build status
+Project lead
+Open
+
+VISARJAN GHAT WATCH  |  MASTER PROJECT DOCUMENT
+Project specification and design reference  |  Page 21
+17.2 Readiness checklist
+
+[ ] Input dataset and source PDFs are present at documented paths.
+
+[ ] Missing markers are treated as missing, distinct from BDL and ND.
+
+[ ] CPCB Class B thresholds are encoded and documented.
+
+[ ] DO and BOD headline unit tests reproduce 42/116 and 100/112 respectively.
+
+[ ] Five to ten readings are manually checked against the cited PDF pages.
+
+[ ] Seven ghats appear in the ranking view.
+
+[ ] Severity and evidence strength are separate in the interface.
+
+[ ] Missing years/phases and ambiguous site naming are visibly disclosed.
+
+[ ] Each generated numeric claim is verified against the facts table.
+
+[ ] Health-claim screening has been tested and the limitations note is visible.
+
+[ ] Hindi and English brief are readable in the browser and printable PDF.
+
+[ ] README includes team, track, target user, run steps, limitations and any extra data sources.
+
+[ ] Licence file is present and appropriate.
+
+[ ] No secrets or API keys are committed.
+
+[ ] Public static deployment works on a phone-sized browser.
+
+[ ] Remaining limitations and unimplemented features are accurately documented.
+17.3 Handover rule
+A feature should be labelled implemented only when its code exists and a relevant check has passed. A feature in the 
+solution specification but not demonstrated by the repository should remain planned or not verified. Ranking results 
+should always carry the criteria/method context needed to understand them, and data gaps must remain explicit.
