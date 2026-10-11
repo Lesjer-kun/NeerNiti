@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Visarjan Ghat Watch - Bhopal</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-slate-50 text-slate-800">
+  <header class="bg-sky-900 text-white no-print">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex flex-wrap items-center gap-3">
+      <div class="flex-1 min-w-[220px]">
+        <h1 class="text-xl font-semibold">Visarjan Ghat Watch</h1>
+        <p class="text-sky-100 text-sm" data-i18n="subtitle">Pre-festival water-quality briefing for Bhopal ghats</p>
+      </div>
+      <span id="badge-period" class="badge bg-sky-700">Data 2023-2025</span>
+      <span id="badge-verify" class="badge bg-slate-500" title="Every number in generated text is checked against the facts table">Verifying...</span>
+      <button id="lang-toggle" class="badge bg-white text-sky-900 hover:bg-sky-100" aria-label="Toggle language">हिंदी</button>
+    </div>
+    <nav class="max-w-6xl mx-auto px-4 flex gap-1" role="tablist">
+      <button class="tab active" data-tab="dashboard" role="tab" data-i18n="tab_dashboard">Dashboard</button>
+      <button class="tab" data-tab="evidence" role="tab" data-i18n="tab_evidence">Evidence</button>
+      <button class="tab" data-tab="brief" role="tab" data-i18n="tab_brief">Brief</button>
+    </nav>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 py-6">
+    <div id="loading" class="text-center text-slate-500 py-16">Loading data...</div>
+    <div id="error" class="hidden bg-red-50 border border-red-300 text-red-800 rounded p-4"></div>
+
+    <!-- Dashboard -->
+    <section id="tab-dashboard" class="tab-panel hidden">
+      <div id="summary-cards" class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6"></div>
+      <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+        <h2 class="text-lg font-semibold" data-i18n="ranked_heading">Ghats ranked by concern (CPCB Class B limits, Durga weighted 2x)</h2>
+        <div class="flex gap-2 text-sm">
+          <button class="sort-btn active" data-sort="severity" data-i18n="sort_severity">By severity</button>
+          <button class="sort-btn" data-sort="testing" data-i18n="sort_testing">By testing priority</button>
+        </div>
+      </div>
+      <p class="text-sm text-slate-600 mb-4" data-i18n="ranked_note">Severity and evidence strength are separate axes. A ghat with limited evidence is never shown as implicitly safe; its gaps are listed on the card.</p>
+      <div id="ghat-cards" class="grid md:grid-cols-2 gap-4"></div>
+      <div id="method" class="mt-8 text-xs text-slate-500"></div>
+    </section>
+
+    <!-- Evidence -->
+    <section id="tab-evidence" class="tab-panel hidden">
+      <div class="flex flex-wrap gap-2 items-end mb-4">
+        <label class="text-sm">Ghat<br><select id="ev-site" class="select"></select></label>
+        <label class="text-sm">Parameter<br><select id="ev-param" class="select"><option value="">All</option></select></label>
+        <label class="text-sm">Year<br><select id="ev-year" class="select"><option value="">All</option></select></label>
+        <label class="text-sm">Festival<br><select id="ev-fest" class="select"><option value="">All</option></select></label>
+        <label class="text-sm">Sort<br><select id="ev-sort" class="select">
+          <option value="report">Report order</option><option value="value_desc">Value high-low</option><option value="value_asc">Value low-high</option><option value="outcome">Breaches first</option></select></label>
+        <span class="text-xs text-slate-500 ml-auto">
+          <span class="legend bg-red-100 border-red-400">breach</span>
+          <span class="legend bg-green-100 border-green-400">within limit</span>
+          <span class="legend bg-blue-100 border-blue-400">BDL</span>
+          <span class="legend bg-slate-200 border-slate-400">missing</span>
+          <span class="legend bg-white border-slate-300">no limit</span>
+        </span>
+      </div>
+      <div id="ev-site-note" class="mb-3"></div>
+      <div class="grid lg:grid-cols-3 gap-4">
+        <div class="lg:col-span-2 overflow-x-auto bg-white rounded shadow-sm">
+          <table id="ev-table" class="min-w-full text-sm"></table>
+        </div>
+        <aside id="gaps-panel" class="bg-white rounded shadow-sm p-4"></aside>
+      </div>
+    </section>
+
+    <!-- Brief -->
+    <section id="tab-brief" class="tab-panel hidden">
+      <div class="flex flex-wrap gap-2 items-center mb-3 no-print">
+        <div class="flex rounded overflow-hidden border border-sky-800">
+          <button class="brief-lang active" data-lang="en">English</button>
+          <button class="brief-lang" data-lang="hi">हिंदी</button>
+        </div>
+        <button id="brief-copy" class="btn">Copy text</button>
+        <button id="brief-print" class="btn">Print / PDF</button>
+        <span id="brief-badge" class="badge bg-slate-500"></span>
+        <span id="copy-status" class="text-sm text-green-700"></span>
+      </div>
+      <pre id="brief-text" class="brief bg-white rounded shadow-sm p-5 whitespace-pre-wrap"></pre>
+    </section>
+  </main>
+
+  <!-- Evidence drawer (opened from a card) -->
+  <div id="drawer-backdrop" class="hidden fixed inset-0 bg-black/40 z-40 no-print"></div>
+  <aside id="drawer" class="hidden fixed top-0 right-0 h-full w-full md:w-[720px] bg-white shadow-2xl z-50 overflow-y-auto no-print" aria-label="Evidence drawer">
+    <div class="sticky top-0 bg-white border-b px-4 py-3 flex items-center gap-3">
+      <h3 id="drawer-title" class="font-semibold flex-1"></h3>
+      <button id="drawer-full" class="btn text-xs">Open in Evidence tab</button>
+      <button id="drawer-close" class="text-2xl leading-none px-2" aria-label="Close">&times;</button>
+    </div>
+    <div id="drawer-body" class="p-4"></div>
+  </aside>
+
+  <footer class="max-w-6xl mx-auto px-4 py-6 text-xs text-slate-500">
+    Source: MPPCB Ganesh and Durga immersion reports 2023, 2024, 2025. Limits: CPCB Class B (outdoor bathing).
+    Historical readings only, not live conditions. Reports against limits; makes no statement about effects on people.
+  </footer>
+
+  <script src="js/charts.js"></script>
+  <script src="js/gaps-view.js"></script>
+  <script src="js/evidence-view.js"></script>
+  <script src="js/ranking-view.js"></script>
+  <script src="js/brief-view.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
