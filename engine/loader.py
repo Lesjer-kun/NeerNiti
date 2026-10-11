@@ -8,6 +8,7 @@ Each CSV row becomes a `Reading` with an explicit `state`:
 from __future__ import annotations
 
 import csv
+import re
 from dataclasses import dataclass, asdict
 from pathlib import Path
 from typing import Optional
@@ -156,6 +157,6 @@ def site_meta(readings: list[Reading]) -> dict[str, dict]:
         if r.site_match_confidence == "medium":
             m["site_match_confidence"] = "medium"
     for m in meta.values():
-        m["water_body"] = min(m["water_bodies"], key=len)
+        m["water_body"] = re.sub(r"\s*\(as printed[^)]*\)$", "", min(m["water_bodies"], key=len))
         m["site_ambiguous"] = m["site_match_confidence"] != "high"
     return meta

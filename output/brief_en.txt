@@ -13,7 +13,7 @@ Reference: CPCB Class B (outdoor bathing) limits - DO at least 5 mg/l, BOD at mo
      Data gaps: 5 of 18 year-festival-phase combinations have no DO/BOD/pH reading.
   3. Shahpura (Shahpura Lake) - Moderate concern; strong evidence; stable trend
      DO below 5 mg/l in 5 of 18 readings (lowest 2.5); BOD above 3 mg/l in 18 of 18 (highest 11.6).
-  4. Rani Kamlapati / Kamla Park (Lower Lake (as printed in Durga tables)) - Moderate concern; strong evidence; worsening trend
+  4. Rani Kamlapati / Kamla Park (Lower Lake) - Moderate concern; strong evidence; worsening trend
      DO below 5 mg/l in 6 of 18 readings (lowest 2.4); BOD above 3 mg/l in 18 of 18 (highest 9.2).
   5. Hathaikheda (Hathaikheda dam) - Moderate concern; strong evidence; worsening trend
      DO below 5 mg/l in 0 of 18 readings (lowest 5.1); BOD above 3 mg/l in 16 of 18 (highest 22); pH outside 6.5-8.5 in 3 of 18.

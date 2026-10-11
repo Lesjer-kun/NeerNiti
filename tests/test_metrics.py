@@ -29,7 +29,8 @@ def test_coverage_matrix_gaps(rows):
 
 
 def test_durga_weighting_changes_rate():
-    base = {"year": 2024, "parameter": "BOD", "exceedance": 0.1}
+    base = {"year": 2024, "phase": "during", "parameter": "BOD", "exceedance": 0.1, "value": 4.0,
+            "unit": "mg/l", "source_page": 1}
     rows = [
         {**base, "festival": "Durga", "outcome": "breach"},
         {**base, "festival": "Ganesh", "outcome": "ok"},
